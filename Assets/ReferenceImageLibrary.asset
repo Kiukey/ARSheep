@@ -27,7 +27,7 @@ MonoBehaviour:
       m_GuidHigh: 3747805161841951595
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: BushQR
+    m_Name: bush
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5007107262884224734
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 8850926283015977126
       m_GuidHigh: 7270879840870025675
-    m_Size: {x: 0, y: 0}
+    m_Size: {x: 0.01, y: 0.015548781}
     m_SpecifySize: 0
-    m_Name: A4Sheep
+    m_Name: sheep
     m_Texture: {fileID: 0}

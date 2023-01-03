@@ -44,13 +44,34 @@ extern void ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69
 extern void ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6 (void);
 // 0x00000010 System.Void ARFeatheredPlaneMeshVisualizer::.cctor()
 extern void ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD (void);
-// 0x00000011 System.Void ImageTracking::Start()
-extern void ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C (void);
-// 0x00000012 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
+// 0x00000011 System.Void Bush::OnMouseDown()
+extern void Bush_OnMouseDown_m6D2BF44F8457E5094D937D31972B42F9A7E44AE3 (void);
+// 0x00000012 System.Void Bush::.ctor()
+extern void Bush__ctor_m445DA345BDE201183C76A8B04D3C71F4CF1C507F (void);
+// 0x00000013 System.Void ImageTracking::OnEnable()
+extern void ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7 (void);
+// 0x00000014 System.Void ImageTracking::OnDisable()
+extern void ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797 (void);
+// 0x00000015 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
 extern void ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE (void);
-// 0x00000013 System.Void ImageTracking::.ctor()
+// 0x00000016 System.Void ImageTracking::Update()
+extern void ImageTracking_Update_mA59D4E582DFDD86F405CC2CEE31CAA8DC58E998E (void);
+// 0x00000017 System.Void ImageTracking::.ctor()
 extern void ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A (void);
-static Il2CppMethodPointer s_methodPointers[19] = 
+// 0x00000018 ISelectableItem SelectableManager::get_Current()
+extern void SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2 (void);
+// 0x00000019 System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
+extern void SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79 (void);
+// 0x0000001A System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
+extern void SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A (void);
+// 0x0000001B System.Void SelectableManager::SetSelectable(ISelectableItem)
+extern void SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802 (void);
+// 0x0000001C System.Void SelectableManager::.ctor()
+extern void SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D (void);
+// 0x0000001D T SingletonTemplate`1::get_Instance()
+// 0x0000001E System.Void SingletonTemplate`1::Awake()
+// 0x0000001F System.Void SingletonTemplate`1::.ctor()
+static Il2CppMethodPointer s_methodPointers[31] = 
 {
 	AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A,
 	AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF,
@@ -68,11 +89,23 @@ static Il2CppMethodPointer s_methodPointers[19] =
 	ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5,
 	ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6,
 	ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD,
-	ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C,
+	Bush_OnMouseDown_m6D2BF44F8457E5094D937D31972B42F9A7E44AE3,
+	Bush__ctor_m445DA345BDE201183C76A8B04D3C71F4CF1C507F,
+	ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7,
+	ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797,
 	ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE,
+	ImageTracking_Update_mA59D4E582DFDD86F405CC2CEE31CAA8DC58E998E,
 	ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A,
+	SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2,
+	SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79,
+	SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A,
+	SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802,
+	SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D,
+	NULL,
+	NULL,
+	NULL,
 };
-static const int32_t s_InvokerIndices[19] = 
+static const int32_t s_InvokerIndices[31] = 
 {
 	5148,
 	4161,
@@ -91,25 +124,48 @@ static const int32_t s_InvokerIndices[19] =
 	5243,
 	8326,
 	5243,
+	5243,
+	5243,
+	5243,
 	4065,
 	5243,
+	5243,
+	5148,
+	4161,
+	4161,
+	4161,
+	5243,
+	0,
+	0,
+	0,
+};
+static const Il2CppTokenRangePair s_rgctxIndices[1] = 
+{
+	{ 0x02000008, { 0, 2 } },
+};
+extern const uint32_t g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2;
+extern const uint32_t g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107;
+static const Il2CppRGCTXDefinition s_rgctxValues[2] = 
+{
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107 },
 };
 extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationAssemblyU2DCSharp;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	19,
+	31,
 	s_methodPointers,
 	0,
 	NULL,
 	s_InvokerIndices,
 	0,
 	NULL,
-	0,
-	NULL,
-	0,
-	NULL,
+	1,
+	s_rgctxIndices,
+	2,
+	s_rgctxValues,
 	&g_DebuggerMetadataRegistrationAssemblyU2DCSharp,
 	NULL, // module initializer,
 	NULL,
