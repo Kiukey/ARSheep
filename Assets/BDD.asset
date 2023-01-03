@@ -16,4 +16,24 @@ MonoBehaviour:
   m_GuidHigh: 10440175369813364103
   m_DataStore:
     m_Storage: []
-  m_Images: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5439899483299868012
+      m_GuidHigh: 12663223204690842297
+    m_SerializedTextureGuid:
+      m_GuidLow: 3937294163484917529
+      m_GuidHigh: 3747805161841951595
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: BushQR
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5007107262884224734
+      m_GuidHigh: 9204701939715624637
+    m_SerializedTextureGuid:
+      m_GuidLow: 8850926283015977126
+      m_GuidHigh: 7270879840870025675
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: A4Sheep
+    m_Texture: {fileID: 0}
