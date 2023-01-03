@@ -11,6 +11,8 @@ public class Bush : MonoBehaviour,ISelectableItem
         SelectableManager.Instance.SetSelectable(this);
     }
 
-
-
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
 }
