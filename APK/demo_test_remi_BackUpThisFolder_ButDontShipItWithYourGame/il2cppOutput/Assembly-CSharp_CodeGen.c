@@ -44,7 +44,24 @@ extern void ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69
 extern void ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6 (void);
 // 0x00000010 System.Void ARFeatheredPlaneMeshVisualizer::.cctor()
 extern void ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD (void);
-static Il2CppMethodPointer s_methodPointers[16] = 
+// 0x00000011 System.Void Bush::OnMouseDown()
+extern void Bush_OnMouseDown_m6D2BF44F8457E5094D937D31972B42F9A7E44AE3 (void);
+// 0x00000012 System.Void Bush::.ctor()
+extern void Bush__ctor_m445DA345BDE201183C76A8B04D3C71F4CF1C507F (void);
+// 0x00000013 ISelectableItem SelectableManager::get_Current()
+extern void SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2 (void);
+// 0x00000014 System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
+extern void SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79 (void);
+// 0x00000015 System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
+extern void SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A (void);
+// 0x00000016 System.Void SelectableManager::SetSelectable(ISelectableItem)
+extern void SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802 (void);
+// 0x00000017 System.Void SelectableManager::.ctor()
+extern void SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D (void);
+// 0x00000018 T SingletonTemplate`1::get_Instance()
+// 0x00000019 System.Void SingletonTemplate`1::Awake()
+// 0x0000001A System.Void SingletonTemplate`1::.ctor()
+static Il2CppMethodPointer s_methodPointers[26] = 
 {
 	AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A,
 	AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF,
@@ -62,8 +79,18 @@ static Il2CppMethodPointer s_methodPointers[16] =
 	ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5,
 	ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6,
 	ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD,
+	Bush_OnMouseDown_m6D2BF44F8457E5094D937D31972B42F9A7E44AE3,
+	Bush__ctor_m445DA345BDE201183C76A8B04D3C71F4CF1C507F,
+	SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2,
+	SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79,
+	SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A,
+	SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802,
+	SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D,
+	NULL,
+	NULL,
+	NULL,
 };
-static const int32_t s_InvokerIndices[16] = 
+static const int32_t s_InvokerIndices[26] = 
 {
 	5080,
 	4120,
@@ -81,22 +108,43 @@ static const int32_t s_InvokerIndices[16] =
 	4120,
 	5175,
 	8213,
+	5175,
+	5175,
+	5080,
+	4120,
+	4120,
+	4120,
+	5175,
+	0,
+	0,
+	0,
+};
+static const Il2CppTokenRangePair s_rgctxIndices[1] = 
+{
+	{ 0x02000007, { 0, 2 } },
+};
+extern const uint32_t g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2;
+extern const uint32_t g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107;
+static const Il2CppRGCTXDefinition s_rgctxValues[2] = 
+{
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107 },
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	16,
+	26,
 	s_methodPointers,
 	0,
 	NULL,
 	s_InvokerIndices,
 	0,
 	NULL,
-	0,
-	NULL,
-	0,
-	NULL,
+	1,
+	s_rgctxIndices,
+	2,
+	s_rgctxValues,
 	NULL,
 	NULL, // module initializer,
 	NULL,
