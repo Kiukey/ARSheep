@@ -44,41 +44,13 @@ extern void ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69
 extern void ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6 (void);
 // 0x00000010 System.Void ARFeatheredPlaneMeshVisualizer::.cctor()
 extern void ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD (void);
-// 0x00000011 UnityEngine.XR.ARFoundation.ARTrackedImageManager ImageTracking::get_ImageManager()
-extern void ImageTracking_get_ImageManager_mB9167D082802B94F3D40A1592065C9D25AA2902F (void);
-// 0x00000012 System.Void ImageTracking::set_ImageManager(UnityEngine.XR.ARFoundation.ARTrackedImageManager)
-extern void ImageTracking_set_ImageManager_m4BF581E9E65C90F8F99524622D4318279EEFECCD (void);
-// 0x00000013 UnityEngine.XR.ARSubsystems.XRReferenceImageLibrary ImageTracking::get_ImageLibrary()
-extern void ImageTracking_get_ImageLibrary_mA5DC16FA8A2DFD989956A29CE9937581CA2EC246 (void);
-// 0x00000014 System.Void ImageTracking::set_ImageLibrary(UnityEngine.XR.ARSubsystems.XRReferenceImageLibrary)
-extern void ImageTracking_set_ImageLibrary_m80A3F2FF2C1BF1BEE390D9832A9CA04A7D0F5F9C (void);
-// 0x00000015 UnityEngine.GameObject ImageTracking::get_onePrefab()
-extern void ImageTracking_get_onePrefab_m2CC21F714C536DF554F0DCC780B416DC7710AE41 (void);
-// 0x00000016 System.Void ImageTracking::set_onePrefab(UnityEngine.GameObject)
-extern void ImageTracking_set_onePrefab_mDF94AA447B744B654A09E84D6BF51352CB478336 (void);
-// 0x00000017 UnityEngine.GameObject ImageTracking::get_spawnedOnePrefab()
-extern void ImageTracking_get_spawnedOnePrefab_m4D2F6068C3A715C9FF6B299252D8B260F6007B44 (void);
-// 0x00000018 System.Void ImageTracking::set_spawnedOnePrefab(UnityEngine.GameObject)
-extern void ImageTracking_set_spawnedOnePrefab_m4681870E45A9EEDC602A47ACC7C83632FCD08C3C (void);
-// 0x00000019 UnityEngine.GameObject ImageTracking::get_twoPrefab()
-extern void ImageTracking_get_twoPrefab_m97076DA1667C712D3AD40872677AA69F00AAE6BA (void);
-// 0x0000001A System.Void ImageTracking::set_twoPrefab(UnityEngine.GameObject)
-extern void ImageTracking_set_twoPrefab_m6C4D65B8A1680431F9AE6A793FEB4DF1FDA8978E (void);
-// 0x0000001B UnityEngine.GameObject ImageTracking::get_spawnedTwoPrefab()
-extern void ImageTracking_get_spawnedTwoPrefab_m737E1C9DBD7C221EA2623919A05A7E031AF85D34 (void);
-// 0x0000001C System.Void ImageTracking::set_spawnedTwoPrefab(UnityEngine.GameObject)
-extern void ImageTracking_set_spawnedTwoPrefab_mD2D75BD47B2AD223794BF828EBE23BE9106715F0 (void);
-// 0x0000001D System.Void ImageTracking::OnEnable()
-extern void ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7 (void);
-// 0x0000001E System.Void ImageTracking::OnDisable()
-extern void ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797 (void);
-// 0x0000001F System.Void ImageTracking::ImageManagerOnTrackedImagesChanged(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
-extern void ImageTracking_ImageManagerOnTrackedImagesChanged_m5C4AABB694AC53B59CBE491549C965582EDCFD19 (void);
-// 0x00000020 System.Int32 ImageTracking::NumberOfTrackedImages()
-extern void ImageTracking_NumberOfTrackedImages_mDD0F6C9D25B85575AEB0E715506055DB32F0E615 (void);
-// 0x00000021 System.Void ImageTracking::.ctor()
+// 0x00000011 System.Void ImageTracking::Start()
+extern void ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C (void);
+// 0x00000012 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
+extern void ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE (void);
+// 0x00000013 System.Void ImageTracking::.ctor()
 extern void ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A (void);
-static Il2CppMethodPointer s_methodPointers[33] = 
+static Il2CppMethodPointer s_methodPointers[19] = 
 {
 	AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A,
 	AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF,
@@ -96,25 +68,11 @@ static Il2CppMethodPointer s_methodPointers[33] =
 	ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5,
 	ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6,
 	ARFeatheredPlaneMeshVisualizer__cctor_mF4BA6DDB611A3FD966C8B9494AE6B3EB8647CEAD,
-	ImageTracking_get_ImageManager_mB9167D082802B94F3D40A1592065C9D25AA2902F,
-	ImageTracking_set_ImageManager_m4BF581E9E65C90F8F99524622D4318279EEFECCD,
-	ImageTracking_get_ImageLibrary_mA5DC16FA8A2DFD989956A29CE9937581CA2EC246,
-	ImageTracking_set_ImageLibrary_m80A3F2FF2C1BF1BEE390D9832A9CA04A7D0F5F9C,
-	ImageTracking_get_onePrefab_m2CC21F714C536DF554F0DCC780B416DC7710AE41,
-	ImageTracking_set_onePrefab_mDF94AA447B744B654A09E84D6BF51352CB478336,
-	ImageTracking_get_spawnedOnePrefab_m4D2F6068C3A715C9FF6B299252D8B260F6007B44,
-	ImageTracking_set_spawnedOnePrefab_m4681870E45A9EEDC602A47ACC7C83632FCD08C3C,
-	ImageTracking_get_twoPrefab_m97076DA1667C712D3AD40872677AA69F00AAE6BA,
-	ImageTracking_set_twoPrefab_m6C4D65B8A1680431F9AE6A793FEB4DF1FDA8978E,
-	ImageTracking_get_spawnedTwoPrefab_m737E1C9DBD7C221EA2623919A05A7E031AF85D34,
-	ImageTracking_set_spawnedTwoPrefab_mD2D75BD47B2AD223794BF828EBE23BE9106715F0,
-	ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7,
-	ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797,
-	ImageTracking_ImageManagerOnTrackedImagesChanged_m5C4AABB694AC53B59CBE491549C965582EDCFD19,
-	ImageTracking_NumberOfTrackedImages_mDD0F6C9D25B85575AEB0E715506055DB32F0E615,
+	ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C,
+	ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE,
 	ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A,
 };
-static const int32_t s_InvokerIndices[33] = 
+static const int32_t s_InvokerIndices[19] = 
 {
 	5148,
 	4161,
@@ -122,7 +80,7 @@ static const int32_t s_InvokerIndices[33] =
 	5243,
 	5243,
 	5243,
-	8328,
+	8326,
 	5189,
 	4194,
 	5243,
@@ -131,23 +89,9 @@ static const int32_t s_InvokerIndices[33] =
 	4055,
 	4161,
 	5243,
-	8328,
-	5148,
-	4161,
-	5148,
-	4161,
-	5148,
-	4161,
-	5148,
-	4161,
-	5148,
-	4161,
-	5148,
-	4161,
-	5243,
+	8326,
 	5243,
 	4065,
-	5121,
 	5243,
 };
 extern const Il2CppDebuggerMetadataRegistration g_DebuggerMetadataRegistrationAssemblyU2DCSharp;
@@ -155,7 +99,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	33,
+	19,
 	s_methodPointers,
 	0,
 	NULL,
