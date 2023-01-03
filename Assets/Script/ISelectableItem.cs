@@ -4,4 +4,6 @@ using UnityEngine;
 
 public interface ISelectableItem
 {
+
+    public Vector3 GetPosition();
 }
