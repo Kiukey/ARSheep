@@ -12,7 +12,7 @@ public class ImageTracking : MonoBehaviour
     [SerializeField] XRReferenceImageLibrary imageLibrary = null;
 
     [SerializeField] List<GameObject> objects = new List<GameObject>();
-    GameObject bush = null;
+    BushImageBehaviour bush = null;
     bool setBush = false;
     //GameObject spawnedObject = null;
 
@@ -54,7 +54,7 @@ public class ImageTracking : MonoBehaviour
                     GameObject _object = Instantiate(objects[i], image.transform);
                     Debug.Log("Spawn/Move Object");
                     if (i == 0)
-                        bush = _object;
+                        bush = _object.GetComponent<BushImageBehaviour>();
                 }
             }
             //Instantiate(objects[0], image.transform);
@@ -67,13 +67,13 @@ public class ImageTracking : MonoBehaviour
             {
                 if (image.referenceImage.name.Equals(imageLibrary[i].name))
                 {
-                    if (i == 0 && !setBush)
+                    if (i == 0 && !bush.IsTargettedBySheep)
                     {
                         SheepImageBehaviour _sheep = SheepImageManager.Instance.CheckDistance(bush.transform);
                         if (!_sheep)
                             return;
-                        _sheep.SetTarget(bush.transform);
-                        setBush = true;
+                        _sheep.SetTarget(bush);
+                        bush.SetIsTargetBySheep(true);
                     }
                 }
             }
