@@ -35,12 +35,18 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
         RaycastHit hit;
 
         if (SelectableManager.Instance.Current == null)
+        {
             if (Physics.Raycast(raycast, out hit, 200, selectableLayers))
                 TapInteraction(hit);
             else if (Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
+            {
                 SpawnInstance(hit);
-        else
-            TapInteraction(hit);
+            }
+        }
+        else if(Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
+        {
+                TapInteraction(hit);
+        }
 
     }
 
