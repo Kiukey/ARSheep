@@ -526,7 +526,7 @@ MonoBehaviour:
     type: 3}
   bushObject: {fileID: 6565245504574000922, guid: 2ca8cf4fbf87df840ad2f8308447f889,
     type: 3}
-  layerMask:
+  detectableLayersOnRaycast:
     serializedVersion: 2
     m_Bits: 55
 --- !u!4 &1046389490
