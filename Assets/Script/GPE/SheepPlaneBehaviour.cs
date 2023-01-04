@@ -31,6 +31,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     void Init()
     {
+        CustomClicker.Instance.OnClickObject += InteractionBehaviour;
         spawnPosition = CurrentPosition;
         target = CurrentPosition;
         waitEatingSpeed = new WaitForSeconds(eatingSpeed);
@@ -74,8 +75,10 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     #endregion
     #region ClickBehaviour
-    void OnMouseDown()
+    void InteractionBehaviour(GameObject _objec, RaycastHit _hit)
     {
+        if (_objec != this)
+            return;
         selected = !selected;
         if (selected)
         {
