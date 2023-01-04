@@ -22,17 +22,17 @@ public class EntityManager : MonoBehaviour
     [SerializeField] List<IManagedEntity> allEntities = null;
 
 
-    void AddEntity(IManagedEntity _newEntity)
+    public void AddEntity(IManagedEntity _newEntity)
     {
         allEntities.Add(_newEntity);
     }
     
-    void RemoveEntity(IManagedEntity _newEntity)
+    public void RemoveEntity(IManagedEntity _newEntity)
     {
         allEntities.Remove(_newEntity);
     }
     
-    void RemoveAt(int _index)
+    public void RemoveAt(int _index)
     {
         allEntities.RemoveAt(_index);
     }
