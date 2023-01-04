@@ -123,7 +123,8 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     IEnumerator EatBushBehaviour()
     {
-        yield return waitEatingSpeed;        
+        yield return waitEatingSpeed;
+        DestroyBush();
         yield return waitForFrame;
         ReturnToSpawn();
     }
@@ -132,7 +133,13 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
         EndSelection();
         enableExploration = true;        
     }
-
+    void DestroyBush()
+    {
+        if (IsSelectABush())
+        {
+            Destroy(((Bush)SelectableManager.Instance.Current).gameObject);
+        }
+    }
     public Vector3 GetPosition()
     {
         return transform.position;
