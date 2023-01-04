@@ -20,7 +20,6 @@ public class SheepImageManager : MonoBehaviour
     #endregion
 
     [SerializeField] List<SheepImageBehaviour> allEntities = null;
-    float distance = 0;
 
     public void AddEntity(SheepImageBehaviour _newEntity)
     {
@@ -38,18 +37,12 @@ public class SheepImageManager : MonoBehaviour
     {
         for (int i = 0; i < allEntities.Count; i++)
         {
-            distance = Vector3.Distance(allEntities[i].transform.position, _target.position);
-            if (distance < 1f)
+            if (Vector3.Distance(allEntities[i].transform.position, _target.position) < 1f)
             {
                 Debug.Log("Found Sheep at distance");
                 return allEntities[i];
             }
         }
         return null;
-    }
-
-    private void OnGUI()
-    {
-        GUILayout.TextField(distance.ToString());   
     }
 }

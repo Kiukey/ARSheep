@@ -11,6 +11,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     [SerializeField] Transform target = null;
     [SerializeField] bool returnToInit = false;
 
+
     Vector3 initialPosition = Vector3.zero;
     public Vector3 TargetPosition => target.position;
 
@@ -37,15 +38,17 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     {
         OnSheepEat?.Invoke(this);
         target.gameObject.SetActive(false);
+        //Destroy(target);
         target = null;
+        //transform.position = initialPosition;
         returnToInit = true;
     }
     void MoveToFood()
     {
-        if (!target)
+        if (!target || returnToInit)
             return;
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
-        if (Vector3.Distance(transform.position, TargetPosition) < 0.1 && target)
+        if (Vector3.Distance(transform.position, TargetPosition) < 0.02 && target)
             StartEating();
     }
     void ReturnToInitialPos()
@@ -54,11 +57,13 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
             return;
         transform.position = Vector3.MoveTowards(transform.position, initialPosition, Time.deltaTime * movementSpeed);
 
-        if (Vector3.Distance(transform.position, initialPosition) < 0.1)
+        if (Vector3.Distance(transform.position, initialPosition) < 0.02)
             returnToInit = false;
     }
     public void SetTarget(Transform _target)
     {
+        if (target)
+            return;
         target = _target;
         initialPosition = transform.position;
         returnToInit = false;
