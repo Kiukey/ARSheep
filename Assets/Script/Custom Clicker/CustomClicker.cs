@@ -12,6 +12,9 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
     [SerializeField] LayerMask detectableLayersOnRaycast = 0;
     [SerializeField] LayerMask selectableLayers = 0;
 
+    float planeY = 0;
+    bool lockedY = false;
+
     GameObject sheepSpawnObject = null;
 
     void Update()
@@ -36,7 +39,9 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
                 TapInteraction(hit);
             else if (Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
                 SpawnInstance(hit);
-            
+        else
+            TapInteraction(hit);
+
     }
 
     void TapInteraction(RaycastHit hit)
@@ -47,11 +52,17 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
 
     void SpawnInstance(RaycastHit hit)
     {
+        if(lockedY == false)
+        {
+            lockedY = true;
+            planeY = hit.point.y;
+        }
+        Vector3 _spawnVector = new Vector3(hit.point.x, planeY, hit.point.z);
         if (sheepSpawnObject == null)
         {
-            sheepSpawnObject = Instantiate(sheepObject, hit.point, transform.rotation);
+            sheepSpawnObject = Instantiate(sheepObject, _spawnVector, transform.rotation);
             return;
         }
-        Instantiate(bushObject, hit.point, transform.rotation);
+        Instantiate(bushObject, _spawnVector, transform.rotation);
     }
 }
