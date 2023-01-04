@@ -43,7 +43,7 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
                 SpawnInstance(hit);
             }
         }
-        else if(Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
+        else if(Physics.Raycast(raycast, out hit, 200, selectableLayers))
         {
                 TapInteraction(hit);
         }
