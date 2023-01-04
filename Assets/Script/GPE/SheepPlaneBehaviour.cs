@@ -14,9 +14,10 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     [SerializeField] float range, moveSpeed, eatingSpeed;
     [SerializeField] bool enableExploration = true;
 
-    bool selected = false, moveToEat = false;
+    bool selected = false, moveToEat = false, bushSelected = false;
     Vector3 spawnPosition;
     Vector3 target;
+    Bush gameObjectBush = null;
     WaitForSeconds waitEatingSpeed;
     WaitForEndOfFrame waitForFrame;
     #endregion
@@ -24,6 +25,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     public Vector3 CurrentPosition => GetPosition();
     public Quaternion CurrentRotation => transform.rotation;
     public bool EnableExploration { get => enableExploration; set => enableExploration = value; }
+
     #endregion
     void Start()
     {
@@ -32,6 +34,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     void Init()
     {
         CustomClicker.Instance.OnClickObject += InteractionBehaviour;
+        CustomClicker.Instance.OnClickObject += SelectBush;
         spawnPosition = CurrentPosition;
         target = CurrentPosition;
         waitEatingSpeed = new WaitForSeconds(eatingSpeed);
@@ -90,22 +93,35 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
             EndSelection();
         }
     }
+    void SelectBush(GameObject _objec, RaycastHit _hit)
+    {
+        if (gameObjectBush != null)
+            return;
+        if (IsBush(_objec))
+        {
+            bushSelected = true;
+            target = _objec.transform.position;
+        }
+    }
+    bool IsBush(GameObject _objec)
+    {
+        gameObjectBush = _objec.GetComponent<Bush>();
+        return gameObjectBush != null;
+    }
     void EndSelection()
     {
-        SelectableManager.Instance.SetSelectable(null);
+        SelectableManager.Instance.SetSelectable(null);        
         OnEndSelect?.Invoke();
     }
     #endregion
     #region EatBushBehaviour
-    bool IsSelectABush() => SelectableManager.Instance.Current != null && (SheepPlaneBehaviour)SelectableManager.Instance.Current != this;
-    bool IsStartEating() => selected && IsSelectABush();
+    bool IsStartEating() => selected && bushSelected && !moveToEat && enableExploration;
     void SheepAndBushBehaviour()
     {
-        if (IsStartEating() && !moveToEat)
+        if (IsStartEating())
         {
             moveToEat = true;
             enableExploration = false;
-            target = ((Bush)(SelectableManager.Instance.Current)).GetPosition();
             OnStartMoveToEat?.Invoke();
         }
 
@@ -133,10 +149,9 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     void DestroyBush()
     {
-        if (IsSelectABush())
-        {
-            Destroy(((Bush)SelectableManager.Instance.Current).gameObject);
-        }
+        bushSelected = false;
+        Destroy(gameObjectBush.gameObject);
+        gameObjectBush = null;
     }
     public Vector3 GetPosition()
     {
