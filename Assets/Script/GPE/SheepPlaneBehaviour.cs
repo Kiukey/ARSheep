@@ -77,18 +77,16 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     #region ClickBehaviour
     void InteractionBehaviour(GameObject _objec, RaycastHit _hit)
     {
-        if (_objec != this)
+        if (_objec != gameObject)
             return;
         selected = !selected;
         if (selected)
         {
-            Debug.Log("Clikecd");
             SelectableManager.Instance.SetSelectable(this);
             OnStartSelect?.Invoke();
         }
         else
         {
-            Debug.Log("END Clikecd");
             EndSelection();
         }
     }
