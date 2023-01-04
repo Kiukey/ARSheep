@@ -6,8 +6,15 @@ using UnityEngine;
 public class Bush : MonoBehaviour,ISelectableItem
 {
 
-    private void OnMouseDown()
+    void Start()
     {
+        CustomClicker.Instance.OnClickObject += InteractionBehaviour;
+    }
+
+    void InteractionBehaviour(GameObject _objec, RaycastHit _hit)
+    {
+        if (_objec != gameObject)
+            return;
         SelectableManager.Instance.SetSelectable(this);
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,48 +7,60 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ImageTracking : MonoBehaviour
 {
+    public event Action<Transform> OnCheckDistance = null;
     [SerializeField] ARTrackedImageManager imageManager = null;
     [SerializeField] XRReferenceImageLibrary imageLibrary = null;
 
     [SerializeField] List<GameObject> objects = new List<GameObject>();
-    GameObject spawnedObject = null;
+    //GameObject spawnedObject = null;
 
-   void OnEnable()
-   {
-       imageManager.trackedImagesChanged += UpdateImages;
-   }
-
+    private void Start()
+    {
+        OnCheckDistance += (debug) => Debug.Log("Evenement distance");
+    }
+    void OnEnable()
+    {
+        imageManager.trackedImagesChanged += UpdateImages;
+    }
     private void OnDisable()
     {
         imageManager.trackedImagesChanged -= UpdateImages;
-
     }
     void UpdateImages(ARTrackedImagesChangedEventArgs obj)
     {
-/*        foreach (ARTrackedImage image in obj.added)
+        #region test
+        /*        foreach (ARTrackedImage image in obj.added)
+                {
+                    for (int i = 0; i < imageLibrary.count; i++)
+                    {
+                        if (image.referenceImage.name == imageLibrary[i].name)
+                        {
+                            Debug.Log($"Apparition object {i}");
+                            spawnedObject = Instantiate(objects[i], image.transform.position, image.transform.rotation);
+                            spawnedObject.transform.position = image.transform.position;
+                            Debug.Log("position" + spawnedObject.transform.position);
+                        }
+                    }
+                }*/
+        #endregion
+        foreach (ARTrackedImage image in obj.added)
         {
             for (int i = 0; i < imageLibrary.count; i++)
             {
-                if (image.referenceImage.name == imageLibrary[i].name)
+                if(image.referenceImage.name.Equals(imageLibrary[i].name))
                 {
-                    Debug.Log($"Apparition object {i}");
-                    spawnedObject = Instantiate(objects[i], image.transform.position, image.transform.rotation);
-                    spawnedObject.transform.position = image.transform.position;
-                    Debug.Log("position" + spawnedObject.transform.position);
+                    GameObject _object = Instantiate(objects[i], image.transform);
+                    if (i == 0)
+                    {
+                        SheepImageBehaviour _sheep = SheepImageManager.Instance.CheckDistance(_object.transform);
+                        if (!_sheep)
+                            return;
+                        _sheep.SetTarget(_object.transform);
+                    }
                 }
             }
-        }*/
-
-        foreach (ARTrackedImage image in obj.added)
-        {
-            Instantiate(objects[0], image.transform);
+            //Instantiate(objects[0], image.transform);
         }
-    }
-    private void Update()
-    {
-        if (!spawnedObject)
-            return;
-        Debug.Log("position" + spawnedObject.transform.position);
     }
 }
 
