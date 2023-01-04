@@ -202,6 +202,7 @@ MonoBehaviour:
   imageManager: {fileID: 622639955}
   imageLibrary: {fileID: 11400000, guid: ec50b38fb9f62d144b34679fc87a2649, type: 2}
   objects:
+  - {fileID: 6565245504574000922, guid: 534879a7dabb6c6438d05e472337e58b, type: 3}
   - {fileID: 4683219377653392412, guid: af40a758bda26934c9b0533c759259ce, type: 3}
 --- !u!1 &876218529
 GameObject:

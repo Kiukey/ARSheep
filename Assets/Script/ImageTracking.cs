@@ -12,42 +12,42 @@ public class ImageTracking : MonoBehaviour
     [SerializeField] List<GameObject> objects = new List<GameObject>();
     GameObject spawnedObject = null;
 
-   void OnEnable()
-   {
-       imageManager.trackedImagesChanged += UpdateImages;
-   }
-
+    void OnEnable()
+    {
+        imageManager.trackedImagesChanged += UpdateImages;
+    }
     private void OnDisable()
     {
         imageManager.trackedImagesChanged -= UpdateImages;
-
     }
     void UpdateImages(ARTrackedImagesChangedEventArgs obj)
     {
-/*        foreach (ARTrackedImage image in obj.added)
+        #region test
+        /*        foreach (ARTrackedImage image in obj.added)
+                {
+                    for (int i = 0; i < imageLibrary.count; i++)
+                    {
+                        if (image.referenceImage.name == imageLibrary[i].name)
+                        {
+                            Debug.Log($"Apparition object {i}");
+                            spawnedObject = Instantiate(objects[i], image.transform.position, image.transform.rotation);
+                            spawnedObject.transform.position = image.transform.position;
+                            Debug.Log("position" + spawnedObject.transform.position);
+                        }
+                    }
+                }*/
+        #endregion
+        foreach (ARTrackedImage image in obj.added)
         {
             for (int i = 0; i < imageLibrary.count; i++)
             {
-                if (image.referenceImage.name == imageLibrary[i].name)
+                if(image.referenceImage.name.Equals(imageLibrary[i].name))
                 {
-                    Debug.Log($"Apparition object {i}");
-                    spawnedObject = Instantiate(objects[i], image.transform.position, image.transform.rotation);
-                    spawnedObject.transform.position = image.transform.position;
-                    Debug.Log("position" + spawnedObject.transform.position);
+                    Instantiate(objects[i], image.transform);
                 }
             }
-        }*/
-
-        foreach (ARTrackedImage image in obj.added)
-        {
-            Instantiate(objects[0], image.transform);
+            //Instantiate(objects[0], image.transform);
         }
-    }
-    private void Update()
-    {
-        if (!spawnedObject)
-            return;
-        Debug.Log("position" + spawnedObject.transform.position);
     }
 }
 
