@@ -10,6 +10,7 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
 
     [SerializeField] GameObject sheepObject = null, bushObject = null;
     [SerializeField] LayerMask detectableLayersOnRaycast = 0;
+    [SerializeField] LayerMask selectableLayers = 0;
 
     GameObject sheepSpawnObject = null;
 
@@ -27,7 +28,7 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
                     if(Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
                         SpawnInstance(hit);
                 else
-                    if (Physics.Raycast(raycast, out hit, 200, detectableLayersOnRaycast))
+                    if (Physics.Raycast(raycast, out hit, 200, selectableLayers))
                         TapInteraction(hit);
             }
         }
