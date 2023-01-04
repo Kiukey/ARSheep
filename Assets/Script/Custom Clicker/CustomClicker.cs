@@ -12,6 +12,8 @@ public class CustomClicker : MonoBehaviour
 
     void Update()
     {
+        if (SelectableManager.Instance.Current != null)
+            return;
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
