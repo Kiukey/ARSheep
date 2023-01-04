@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,17 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ImageTracking : MonoBehaviour
 {
+    public event Action<Transform> OnCheckDistance = null;
     [SerializeField] ARTrackedImageManager imageManager = null;
     [SerializeField] XRReferenceImageLibrary imageLibrary = null;
 
     [SerializeField] List<GameObject> objects = new List<GameObject>();
-    GameObject spawnedObject = null;
+    //GameObject spawnedObject = null;
 
+    private void Start()
+    {
+        OnCheckDistance += (debug) => Debug.Log("Evenement distance");
+    }
     void OnEnable()
     {
         imageManager.trackedImagesChanged += UpdateImages;
@@ -43,7 +49,14 @@ public class ImageTracking : MonoBehaviour
             {
                 if(image.referenceImage.name.Equals(imageLibrary[i].name))
                 {
-                    Instantiate(objects[i], image.transform);
+                    GameObject _object = Instantiate(objects[i], image.transform);
+                    if (i == 0)
+                    {
+                        SheepImageBehaviour _sheep = SheepImageManager.Instance.CheckDistance(_object.transform);
+                        if (!_sheep)
+                            return;
+                        _sheep.SetTarget(_object.transform);
+                    }
                 }
             }
             //Instantiate(objects[0], image.transform);

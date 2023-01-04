@@ -56,71 +56,149 @@ extern void CustomClicker_Update_mCC9ADE7AEB662C90C89C57709B85360293B92570 (void
 extern void CustomClicker_SpawnInstance_m32027ACE670E0BFED80DBA393FBC67505A868DA0 (void);
 // 0x00000016 System.Void CustomClicker::.ctor()
 extern void CustomClicker__ctor_m1EC9B0B51FA3C99046C9F7EB3978EC49C1BF309B (void);
-// 0x00000017 System.Void SheepPlaneBehaviour::add_OnStartSelect(System.Action)
+// 0x00000017 System.Void IManagedEntity::Register()
+// 0x00000018 System.Void IManagedEntity::Unregister()
+// 0x00000019 SheepImageManager SheepImageManager::get_Instance()
+extern void SheepImageManager_get_Instance_m65F1E355B3F88A051DD1987BA03A049E0B9B916D (void);
+// 0x0000001A System.Void SheepImageManager::Awake()
+extern void SheepImageManager_Awake_m305E10460906A7913CADECED58723C6DE0C2DD4B (void);
+// 0x0000001B System.Void SheepImageManager::AddEntity(SheepImageBehaviour)
+extern void SheepImageManager_AddEntity_m4E9F7BB4CB7AC80BD583A94973F0FEF819346346 (void);
+// 0x0000001C System.Void SheepImageManager::RemoveEntity(SheepImageBehaviour)
+extern void SheepImageManager_RemoveEntity_m502229C2D006D32722E4DFD86F1E020B08A0C586 (void);
+// 0x0000001D System.Void SheepImageManager::RemoveAt(System.Int32)
+extern void SheepImageManager_RemoveAt_mA9390E592C3E922E836864A02EAC3C052BDA62AC (void);
+// 0x0000001E SheepImageBehaviour SheepImageManager::CheckDistance(UnityEngine.Transform)
+extern void SheepImageManager_CheckDistance_m8C71EC8769AFF3D6A263E203F505B42EC43D9048 (void);
+// 0x0000001F System.Void SheepImageManager::OnGUI()
+extern void SheepImageManager_OnGUI_m36DB77BC48444F3EABB4BE1E6AF2F6ADF64EA0B6 (void);
+// 0x00000020 System.Void SheepImageManager::.ctor()
+extern void SheepImageManager__ctor_m3C0C915E567E069C2857A4541AB60A58BEF50A03 (void);
+// 0x00000021 System.Void SheepImageBehaviour::add_OnSheepEat(System.Action`1<SheepImageBehaviour>)
+extern void SheepImageBehaviour_add_OnSheepEat_mD0AB29388756106859D068275A963FD5C167297F (void);
+// 0x00000022 System.Void SheepImageBehaviour::remove_OnSheepEat(System.Action`1<SheepImageBehaviour>)
+extern void SheepImageBehaviour_remove_OnSheepEat_m4E066E6610AB2B12FA0A2C50060BFB9AAB99416E (void);
+// 0x00000023 UnityEngine.Vector3 SheepImageBehaviour::get_TargetPosition()
+extern void SheepImageBehaviour_get_TargetPosition_m3844907A72CF7A486D72D7FFD2D0DA9E53AC3DFA (void);
+// 0x00000024 System.Void SheepImageBehaviour::Start()
+extern void SheepImageBehaviour_Start_mCD78D24D328A7890E7C37516D4EB298D57796D9D (void);
+// 0x00000025 System.Void SheepImageBehaviour::LateUpdate()
+extern void SheepImageBehaviour_LateUpdate_mE7636FDE42B0EBBFC05FC0B61938CA1D80E0E56E (void);
+// 0x00000026 System.Void SheepImageBehaviour::OnDestroy()
+extern void SheepImageBehaviour_OnDestroy_m042729C3D9A54B7B0351F6FE51D30120E0A21141 (void);
+// 0x00000027 System.Void SheepImageBehaviour::Initialize()
+extern void SheepImageBehaviour_Initialize_m1E072E16979E2F5F0DBA839B82BC18BD287CCDC5 (void);
+// 0x00000028 System.Void SheepImageBehaviour::StartEating()
+extern void SheepImageBehaviour_StartEating_m6BD6C0007985171E47EA5A328B800D899F8B436F (void);
+// 0x00000029 System.Void SheepImageBehaviour::MoveToFood()
+extern void SheepImageBehaviour_MoveToFood_m65E1E1B8298C79FA002F313C859F895BF0959E04 (void);
+// 0x0000002A System.Void SheepImageBehaviour::ReturnToInitialPos()
+extern void SheepImageBehaviour_ReturnToInitialPos_mA7C64B798B9D958F68E55C24FC40E0E95F44D403 (void);
+// 0x0000002B System.Void SheepImageBehaviour::SetTarget(UnityEngine.Transform)
+extern void SheepImageBehaviour_SetTarget_mBE88E32EF9E9D6C512CAD43EB6E749F00BF985D8 (void);
+// 0x0000002C System.Void SheepImageBehaviour::Register()
+extern void SheepImageBehaviour_Register_m36FCBEB07D8008F6FFF28189E9E53D8E995BC328 (void);
+// 0x0000002D System.Void SheepImageBehaviour::Unregister()
+extern void SheepImageBehaviour_Unregister_m9FE63445A2B76CF594A6AD19B69EEE727F328F12 (void);
+// 0x0000002E System.Void SheepImageBehaviour::.ctor()
+extern void SheepImageBehaviour__ctor_m7CB0513837758DA2B7F10C82FB4A1E5EDDC9868E (void);
+// 0x0000002F System.Void SheepImageBehaviour/<>c::.cctor()
+extern void U3CU3Ec__cctor_mAA96DC9CBBC86EBEFB6D189993A94215F262DE28 (void);
+// 0x00000030 System.Void SheepImageBehaviour/<>c::.ctor()
+extern void U3CU3Ec__ctor_m8EC4481714532F4E59455E96FF89BE96BAB1970A (void);
+// 0x00000031 System.Void SheepImageBehaviour/<>c::<Initialize>b__12_0(SheepImageBehaviour)
+extern void U3CU3Ec_U3CInitializeU3Eb__12_0_mA2497B6866BC97EB9188BBA5C609DD59FFBC8F3E (void);
+// 0x00000032 System.Void SheepPlaneBehaviour::add_OnStartSelect(System.Action)
 extern void SheepPlaneBehaviour_add_OnStartSelect_mDAD9B1F14E319D91BA6426A5A0AFFC19EBE5C9A2 (void);
-// 0x00000018 System.Void SheepPlaneBehaviour::remove_OnStartSelect(System.Action)
+// 0x00000033 System.Void SheepPlaneBehaviour::remove_OnStartSelect(System.Action)
 extern void SheepPlaneBehaviour_remove_OnStartSelect_m50CB02FC98DC36EC4EC784E94D4BA710597B4038 (void);
-// 0x00000019 System.Void SheepPlaneBehaviour::add_OnEndSelect(System.Action)
+// 0x00000034 System.Void SheepPlaneBehaviour::add_OnEndSelect(System.Action)
 extern void SheepPlaneBehaviour_add_OnEndSelect_m3DA8506BB02E8315E0A7ADC80FC9474D0EB7F3BE (void);
-// 0x0000001A System.Void SheepPlaneBehaviour::remove_OnEndSelect(System.Action)
+// 0x00000035 System.Void SheepPlaneBehaviour::remove_OnEndSelect(System.Action)
 extern void SheepPlaneBehaviour_remove_OnEndSelect_mDEA89E959CD9BF3513F9F3A8B36E2FA96B69F154 (void);
-// 0x0000001B UnityEngine.Vector2 SheepPlaneBehaviour::get_CurrentPosition()
+// 0x00000036 UnityEngine.Vector2 SheepPlaneBehaviour::get_CurrentPosition()
 extern void SheepPlaneBehaviour_get_CurrentPosition_m49C8BE5CD13BA70FA3AD61068CEEF1F2B66F7D48 (void);
-// 0x0000001C System.Boolean SheepPlaneBehaviour::get_EnableExploration()
+// 0x00000037 System.Boolean SheepPlaneBehaviour::get_EnableExploration()
 extern void SheepPlaneBehaviour_get_EnableExploration_m9729E5BC1CEA428AE8E1C44D087125DAC9D027D2 (void);
-// 0x0000001D System.Void SheepPlaneBehaviour::set_EnableExploration(System.Boolean)
+// 0x00000038 System.Void SheepPlaneBehaviour::set_EnableExploration(System.Boolean)
 extern void SheepPlaneBehaviour_set_EnableExploration_mB53D0138E54E915C664B9D1E2B5705C0EAF4D704 (void);
-// 0x0000001E System.Void SheepPlaneBehaviour::Start()
+// 0x00000039 System.Void SheepPlaneBehaviour::Start()
 extern void SheepPlaneBehaviour_Start_m595141F3166CE146166383F55246E57FE7CDC874 (void);
-// 0x0000001F System.Void SheepPlaneBehaviour::Init()
+// 0x0000003A System.Void SheepPlaneBehaviour::Init()
 extern void SheepPlaneBehaviour_Init_m8DB2A163E6B08177211CB974E577D164246E5A14 (void);
-// 0x00000020 System.Void SheepPlaneBehaviour::Update()
+// 0x0000003B System.Void SheepPlaneBehaviour::Update()
 extern void SheepPlaneBehaviour_Update_m4AF781E8B5B4B5832BA7A808FB4DD54B1C9318FA (void);
-// 0x00000021 System.Void SheepPlaneBehaviour::ExplorationBehaviour()
+// 0x0000003C System.Void SheepPlaneBehaviour::ExplorationBehaviour()
 extern void SheepPlaneBehaviour_ExplorationBehaviour_m864D264C4A0558B557A5A246F6DFA7F1C9FB101C (void);
-// 0x00000022 System.Boolean SheepPlaneBehaviour::IsAtTarget()
+// 0x0000003D System.Boolean SheepPlaneBehaviour::IsAtTarget()
 extern void SheepPlaneBehaviour_IsAtTarget_mB7C9320DD972D11F012832FC9271F94962FD0D42 (void);
-// 0x00000023 System.Void SheepPlaneBehaviour::GenerateRandomTarget()
+// 0x0000003E System.Void SheepPlaneBehaviour::GenerateRandomTarget()
 extern void SheepPlaneBehaviour_GenerateRandomTarget_m980B123041282992EFBDF0B4559B2B0D816B0683 (void);
-// 0x00000024 System.Void SheepPlaneBehaviour::MoveToTarget()
+// 0x0000003F System.Void SheepPlaneBehaviour::MoveToTarget()
 extern void SheepPlaneBehaviour_MoveToTarget_m0C2597C1BFB50ABC4BA6C7A6A196BE50A94B20B3 (void);
-// 0x00000025 System.Void SheepPlaneBehaviour::OnMouseDown()
+// 0x00000040 System.Void SheepPlaneBehaviour::OnMouseDown()
 extern void SheepPlaneBehaviour_OnMouseDown_mAE4E0BC057124C3006503ABA4F973E89D5324E29 (void);
-// 0x00000026 System.Boolean SheepPlaneBehaviour::IsStartEating()
+// 0x00000041 System.Boolean SheepPlaneBehaviour::IsStartEating()
 extern void SheepPlaneBehaviour_IsStartEating_mF1AC760A852926110E36568F0A077939CB8D4122 (void);
-// 0x00000027 System.Void SheepPlaneBehaviour::.ctor()
+// 0x00000042 System.Void SheepPlaneBehaviour::.ctor()
 extern void SheepPlaneBehaviour__ctor_mF2B751AE2FDD1330A3A1DE9B0C69DC9E8C1B6268 (void);
-// 0x00000028 System.Void ImageTracking::OnEnable()
+// 0x00000043 System.Void ImageTracking::add_OnCheckDistance(System.Action`1<UnityEngine.Transform>)
+extern void ImageTracking_add_OnCheckDistance_mF46DE360016FAD9BD916C92ED8971E29E4982099 (void);
+// 0x00000044 System.Void ImageTracking::remove_OnCheckDistance(System.Action`1<UnityEngine.Transform>)
+extern void ImageTracking_remove_OnCheckDistance_m0BB5D7F0C99D5811805EE29F4B9A848D4681B814 (void);
+// 0x00000045 System.Void ImageTracking::Start()
+extern void ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C (void);
+// 0x00000046 System.Void ImageTracking::OnEnable()
 extern void ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7 (void);
-// 0x00000029 System.Void ImageTracking::OnDisable()
+// 0x00000047 System.Void ImageTracking::OnDisable()
 extern void ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797 (void);
-// 0x0000002A System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
+// 0x00000048 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
 extern void ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE (void);
-// 0x0000002B System.Void ImageTracking::Update()
-extern void ImageTracking_Update_mA59D4E582DFDD86F405CC2CEE31CAA8DC58E998E (void);
-// 0x0000002C System.Void ImageTracking::.ctor()
+// 0x00000049 System.Void ImageTracking::.ctor()
 extern void ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A (void);
-// 0x0000002D UnityEngine.Vector3 ISelectableItem::GetPosition()
-// 0x0000002E ISelectableItem SelectableManager::get_Current()
+// 0x0000004A System.Void ImageTracking/<>c::.cctor()
+extern void U3CU3Ec__cctor_m1B5BD1A439960B2C4460965C728AACC283E985F6 (void);
+// 0x0000004B System.Void ImageTracking/<>c::.ctor()
+extern void U3CU3Ec__ctor_m9D3214DCCFA7834AC383A5CB0E58F35555BAAF1B (void);
+// 0x0000004C System.Void ImageTracking/<>c::<Start>b__6_0(UnityEngine.Transform)
+extern void U3CU3Ec_U3CStartU3Eb__6_0_m7ED19FC66208712F8127869AE9A0499B021913C7 (void);
+// 0x0000004D UnityEngine.Vector3 ISelectableItem::GetPosition()
+// 0x0000004E ISelectableItem SelectableManager::get_Current()
 extern void SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2 (void);
-// 0x0000002F System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
+// 0x0000004F System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
 extern void SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79 (void);
-// 0x00000030 System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
+// 0x00000050 System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
 extern void SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A (void);
-// 0x00000031 System.Void SelectableManager::SetSelectable(ISelectableItem)
+// 0x00000051 System.Void SelectableManager::SetSelectable(ISelectableItem)
 extern void SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802 (void);
-// 0x00000032 System.Void SelectableManager::.ctor()
+// 0x00000052 System.Void SelectableManager::.ctor()
 extern void SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D (void);
-// 0x00000033 T SingletonTemplate`1::get_Instance()
-// 0x00000034 System.Void SingletonTemplate`1::Awake()
-// 0x00000035 System.Void SingletonTemplate`1::.ctor()
-// 0x00000036 System.Void Test::Start()
+// 0x00000053 System.Void ExitButtonScript::Start()
+extern void ExitButtonScript_Start_mD83A5A04888D30B31673ED372BE93FCF562FE565 (void);
+// 0x00000054 System.Void ExitButtonScript::ExitGame()
+extern void ExitButtonScript_ExitGame_mF0F05B87777724FC4DB47A67C4E50EDDDD352F66 (void);
+// 0x00000055 System.Void ExitButtonScript::.ctor()
+extern void ExitButtonScript__ctor_m0C70062952FC8C52AB9715909EA2EF9B54456472 (void);
+// 0x00000056 System.Void ExitButtonScript::<Start>b__1_0()
+extern void ExitButtonScript_U3CStartU3Eb__1_0_mCE188E3238B5697FC56949D1A9336D6F79CB8391 (void);
+// 0x00000057 System.Void OpenScene::Start()
+extern void OpenScene_Start_mF143B95937024F6DDE3BC6821D773A056E1E9821 (void);
+// 0x00000058 System.Void OpenScene::OnButtonClick()
+extern void OpenScene_OnButtonClick_m30BF580E83DD38822F8B2AF3620F7CD71764BE31 (void);
+// 0x00000059 System.Void OpenScene::.ctor()
+extern void OpenScene__ctor_m2AC575BDAA09D5BE6DED2B619860AA0C44A96513 (void);
+// 0x0000005A System.Void OpenScene::<Start>b__2_0()
+extern void OpenScene_U3CStartU3Eb__2_0_m6CF4DAA42A4EACF65FC322313D2BB4BF8E0D844E (void);
+// 0x0000005B T SingletonTemplate`1::get_Instance()
+// 0x0000005C System.Void SingletonTemplate`1::Awake()
+// 0x0000005D System.Void SingletonTemplate`1::.ctor()
+// 0x0000005E System.Void Test::Start()
 extern void Test_Start_mA902842AF55C0A063D71F22B280F28BF0FB01497 (void);
-// 0x00000037 System.Void Test::Update()
+// 0x0000005F System.Void Test::Update()
 extern void Test_Update_m68AE52707CAA861E0DBDC29971974A5BF62D82D1 (void);
-// 0x00000038 System.Void Test::.ctor()
+// 0x00000060 System.Void Test::.ctor()
 extern void Test__ctor_mB84DF4A3888723C395E76E3879FDFB8AA1EFEDCB (void);
-static Il2CppMethodPointer s_methodPointers[56] = 
+static Il2CppMethodPointer s_methodPointers[96] = 
 {
 	AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A,
 	AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF,
@@ -144,6 +222,33 @@ static Il2CppMethodPointer s_methodPointers[56] =
 	CustomClicker_Update_mCC9ADE7AEB662C90C89C57709B85360293B92570,
 	CustomClicker_SpawnInstance_m32027ACE670E0BFED80DBA393FBC67505A868DA0,
 	CustomClicker__ctor_m1EC9B0B51FA3C99046C9F7EB3978EC49C1BF309B,
+	NULL,
+	NULL,
+	SheepImageManager_get_Instance_m65F1E355B3F88A051DD1987BA03A049E0B9B916D,
+	SheepImageManager_Awake_m305E10460906A7913CADECED58723C6DE0C2DD4B,
+	SheepImageManager_AddEntity_m4E9F7BB4CB7AC80BD583A94973F0FEF819346346,
+	SheepImageManager_RemoveEntity_m502229C2D006D32722E4DFD86F1E020B08A0C586,
+	SheepImageManager_RemoveAt_mA9390E592C3E922E836864A02EAC3C052BDA62AC,
+	SheepImageManager_CheckDistance_m8C71EC8769AFF3D6A263E203F505B42EC43D9048,
+	SheepImageManager_OnGUI_m36DB77BC48444F3EABB4BE1E6AF2F6ADF64EA0B6,
+	SheepImageManager__ctor_m3C0C915E567E069C2857A4541AB60A58BEF50A03,
+	SheepImageBehaviour_add_OnSheepEat_mD0AB29388756106859D068275A963FD5C167297F,
+	SheepImageBehaviour_remove_OnSheepEat_m4E066E6610AB2B12FA0A2C50060BFB9AAB99416E,
+	SheepImageBehaviour_get_TargetPosition_m3844907A72CF7A486D72D7FFD2D0DA9E53AC3DFA,
+	SheepImageBehaviour_Start_mCD78D24D328A7890E7C37516D4EB298D57796D9D,
+	SheepImageBehaviour_LateUpdate_mE7636FDE42B0EBBFC05FC0B61938CA1D80E0E56E,
+	SheepImageBehaviour_OnDestroy_m042729C3D9A54B7B0351F6FE51D30120E0A21141,
+	SheepImageBehaviour_Initialize_m1E072E16979E2F5F0DBA839B82BC18BD287CCDC5,
+	SheepImageBehaviour_StartEating_m6BD6C0007985171E47EA5A328B800D899F8B436F,
+	SheepImageBehaviour_MoveToFood_m65E1E1B8298C79FA002F313C859F895BF0959E04,
+	SheepImageBehaviour_ReturnToInitialPos_mA7C64B798B9D958F68E55C24FC40E0E95F44D403,
+	SheepImageBehaviour_SetTarget_mBE88E32EF9E9D6C512CAD43EB6E749F00BF985D8,
+	SheepImageBehaviour_Register_m36FCBEB07D8008F6FFF28189E9E53D8E995BC328,
+	SheepImageBehaviour_Unregister_m9FE63445A2B76CF594A6AD19B69EEE727F328F12,
+	SheepImageBehaviour__ctor_m7CB0513837758DA2B7F10C82FB4A1E5EDDC9868E,
+	U3CU3Ec__cctor_mAA96DC9CBBC86EBEFB6D189993A94215F262DE28,
+	U3CU3Ec__ctor_m8EC4481714532F4E59455E96FF89BE96BAB1970A,
+	U3CU3Ec_U3CInitializeU3Eb__12_0_mA2497B6866BC97EB9188BBA5C609DD59FFBC8F3E,
 	SheepPlaneBehaviour_add_OnStartSelect_mDAD9B1F14E319D91BA6426A5A0AFFC19EBE5C9A2,
 	SheepPlaneBehaviour_remove_OnStartSelect_m50CB02FC98DC36EC4EC784E94D4BA710597B4038,
 	SheepPlaneBehaviour_add_OnEndSelect_m3DA8506BB02E8315E0A7ADC80FC9474D0EB7F3BE,
@@ -161,17 +266,30 @@ static Il2CppMethodPointer s_methodPointers[56] =
 	SheepPlaneBehaviour_OnMouseDown_mAE4E0BC057124C3006503ABA4F973E89D5324E29,
 	SheepPlaneBehaviour_IsStartEating_mF1AC760A852926110E36568F0A077939CB8D4122,
 	SheepPlaneBehaviour__ctor_mF2B751AE2FDD1330A3A1DE9B0C69DC9E8C1B6268,
+	ImageTracking_add_OnCheckDistance_mF46DE360016FAD9BD916C92ED8971E29E4982099,
+	ImageTracking_remove_OnCheckDistance_m0BB5D7F0C99D5811805EE29F4B9A848D4681B814,
+	ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C,
 	ImageTracking_OnEnable_m6DEDEE1663EC7AA2AB1000CF58776EC231A744B7,
 	ImageTracking_OnDisable_m62F1D5572FB9F965AE9E9D881D14D2747FFEE797,
 	ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE,
-	ImageTracking_Update_mA59D4E582DFDD86F405CC2CEE31CAA8DC58E998E,
 	ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A,
+	U3CU3Ec__cctor_m1B5BD1A439960B2C4460965C728AACC283E985F6,
+	U3CU3Ec__ctor_m9D3214DCCFA7834AC383A5CB0E58F35555BAAF1B,
+	U3CU3Ec_U3CStartU3Eb__6_0_m7ED19FC66208712F8127869AE9A0499B021913C7,
 	NULL,
 	SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2,
 	SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79,
 	SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A,
 	SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802,
 	SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D,
+	ExitButtonScript_Start_mD83A5A04888D30B31673ED372BE93FCF562FE565,
+	ExitButtonScript_ExitGame_mF0F05B87777724FC4DB47A67C4E50EDDDD352F66,
+	ExitButtonScript__ctor_m0C70062952FC8C52AB9715909EA2EF9B54456472,
+	ExitButtonScript_U3CStartU3Eb__1_0_mCE188E3238B5697FC56949D1A9336D6F79CB8391,
+	OpenScene_Start_mF143B95937024F6DDE3BC6821D773A056E1E9821,
+	OpenScene_OnButtonClick_m30BF580E83DD38822F8B2AF3620F7CD71764BE31,
+	OpenScene__ctor_m2AC575BDAA09D5BE6DED2B619860AA0C44A96513,
+	OpenScene_U3CStartU3Eb__2_0_m6CF4DAA42A4EACF65FC322313D2BB4BF8E0D844E,
 	NULL,
 	NULL,
 	NULL,
@@ -179,68 +297,108 @@ static Il2CppMethodPointer s_methodPointers[56] =
 	Test_Update_m68AE52707CAA861E0DBDC29971974A5BF62D82D1,
 	Test__ctor_mB84DF4A3888723C395E76E3879FDFB8AA1EFEDCB,
 };
-static const int32_t s_InvokerIndices[56] = 
+static const int32_t s_InvokerIndices[96] = 
 {
-	5152,
-	4164,
-	5248,
-	5248,
-	5248,
-	5248,
-	8333,
-	5193,
-	4197,
-	5248,
-	5248,
-	5248,
-	4058,
-	4164,
-	5248,
-	8333,
-	5248,
-	5241,
-	5248,
-	5248,
-	4180,
-	5248,
-	4164,
-	4164,
-	4164,
-	4164,
-	5239,
-	5067,
-	4081,
-	5248,
-	5248,
-	5248,
-	5248,
-	5067,
-	5248,
-	5248,
-	5248,
-	5067,
-	5248,
-	5248,
-	5248,
-	4068,
-	5248,
-	5248,
-	0,
-	5152,
-	4164,
-	4164,
-	4164,
-	5248,
+	5390,
+	4359,
+	5497,
+	5497,
+	5497,
+	5497,
+	8631,
+	5432,
+	4393,
+	5497,
+	5497,
+	5497,
+	4245,
+	4359,
+	5497,
+	8631,
+	5497,
+	5489,
+	5497,
+	5497,
+	4375,
+	5497,
 	0,
 	0,
+	8592,
+	5497,
+	4359,
+	4359,
+	4333,
+	3794,
+	5497,
+	5497,
+	4359,
+	4359,
+	5489,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	4359,
+	5497,
+	5497,
+	5497,
+	8631,
+	5497,
+	4359,
+	4359,
+	4359,
+	4359,
+	4359,
+	5487,
+	5301,
+	4269,
+	5497,
+	5497,
+	5497,
+	5497,
+	5301,
+	5497,
+	5497,
+	5497,
+	5301,
+	5497,
+	4359,
+	4359,
+	5497,
+	5497,
+	5497,
+	4255,
+	5497,
+	8631,
+	5497,
+	4359,
 	0,
-	5248,
-	5248,
-	5248,
+	5390,
+	4359,
+	4359,
+	4359,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	0,
+	0,
+	0,
+	5497,
+	5497,
+	5497,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
-	{ 0x0200000A, { 0, 2 } },
+	{ 0x02000012, { 0, 2 } },
 };
 extern const uint32_t g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2;
 extern const uint32_t g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107;
@@ -254,7 +412,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	56,
+	96,
 	s_methodPointers,
 	0,
 	NULL,
