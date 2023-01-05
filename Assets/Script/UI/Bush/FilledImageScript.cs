@@ -7,36 +7,29 @@ public class FilledImageScript : MonoBehaviour
 {
 
     [SerializeField] Image filledImage;
-    bool isTimerActive = false;
-    float timerMax = 0;
-    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
         filledImage.fillAmount = 0;
+        filledImage.enabled = false;
     }
-
-    void Update()
+    public void EndGrowing()
     {
-        if (!isTimerActive)
-            return;
-        timer += Time.deltaTime;
-        filledImage.fillAmount = (float)timer/timerMax;
-        if(timer > timerMax)
-        {
-            isTimerActive = false;
-            timer = 0;
-            filledImage.fillAmount = 0;
-            filledImage.enabled = false;
-        }
+        filledImage.fillAmount = 0;
+        filledImage.enabled = false;
     }
 
-    public void StartTimer(float _timerMax)
+    public void StartGrowing()
     {
         filledImage.enabled = true;
-        timer = 0;
-        timerMax = _timerMax;
-        isTimerActive = true;
+        filledImage.fillAmount = 0;
+    }
+
+    public void UpdateFilled(float _percent)
+    {
+        filledImage.fillAmount = _percent;
+        if(filledImage.fillAmount >= 1)
+            EndGrowing();
     }
 
 }

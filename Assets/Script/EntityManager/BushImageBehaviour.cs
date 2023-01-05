@@ -8,6 +8,7 @@ public class BushImageBehaviour : MonoBehaviour
 	[SerializeField] bool isTargettedBySheep = false;
 	[SerializeField] bool isGrowing = false;
 	[SerializeField] float growingSpeed = 1f;
+	[SerializeField] FilledImageScript ui = null;
 	[SerializeField] Vector3 scaleSize = Vector3.one;
 
 	public bool IsGrowing => isGrowing;
@@ -26,6 +27,7 @@ public class BushImageBehaviour : MonoBehaviour
 	{
 		transform.localScale = Vector3.zero;
 		isTargettedBySheep = false;
+		ui.StartGrowing();
 		isGrowing = true;
 	}
 
@@ -36,7 +38,7 @@ public class BushImageBehaviour : MonoBehaviour
 		if (transform.localScale == scaleSize)
 			isGrowing = false;
         transform.localScale = Vector3.MoveTowards(transform.localScale, scaleSize, Time.deltaTime * growingSpeed);
-		GrowingProgress(transform.localScale);
+		ui.UpdateFilled(GrowingProgress(transform.localScale));
     }
 
 	float GrowingProgress(Vector3 _currentScale)
