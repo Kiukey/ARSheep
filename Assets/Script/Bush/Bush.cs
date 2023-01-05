@@ -7,41 +7,61 @@ using System;
 public class Bush : MonoBehaviour,ISelectableItem
 {
     public event Action OnEaten = null;
+    public event Action<Bush> OnSelected = null;
 
     [SerializeField] int bitesToEat = 0;
     [SerializeField] AnimationCurve shrinkCurve;
     [SerializeField] Vector3 shrinkSize = Vector3.one;
-    [SerializeField] float growTime = 5;
+    [SerializeField] float growTime = 5, timeAfterEat = 1;
 
     SheepPlaneBehaviour sheepObject = null;
     [SerializeField] int bitesLeft = 0;
+    [SerializeField] MonoBehaviour outline;
 
     bool isGrowing = false;
     Vector3 originalSize = Vector3.zero;
     Vector3 _oldSize = Vector3.zero;
     float curveTime = -1;
 
+    WaitForSeconds waitAfterEat;
+
+    public int BitesLeft => bitesLeft;
     void Start()
-    {
+    {        
         bitesLeft = bitesToEat;
         originalSize = transform.localScale - shrinkSize;
         CustomClicker.Instance.OnClickObject += InteractionBehaviour;
-        //sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();
-        InitSheepEvents();
+        waitAfterEat = new WaitForSeconds(timeAfterEat);
+        sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();
+        SetOutline(false);
+        sheepObject.OnStartEating += (b) =>
+        {
+            if (b != this)
+                return;
+            InitSheepEvents();
+        };
     }
 
     void InitSheepEvents()
     {
-        //sheepobject.oneat
-        //sheepobject.
+        sheepObject.OnBite += EatBehaviour;
+        sheepObject.OnEndEating += HandleUpdateGrowing;
     }
 
     void Update()
     {
         UpdateShrink();
-        UpdateGrowing();
     }
-
+    void SetOutline(bool _enable)
+    {
+        outline.enabled = _enable;
+    }
+    void HandleUpdateGrowing()
+    {
+        sheepObject.OnBite -= EatBehaviour;
+        sheepObject.OnEndEating -= HandleUpdateGrowing;
+        StartCoroutine(UpdateGrowing());
+    }
     Vector3 GetNewSize()
     {
         float _bitesNorm = (float)bitesLeft / (float)bitesToEat;
@@ -50,21 +70,28 @@ public class Bush : MonoBehaviour,ISelectableItem
 
     IEnumerator UpdateGrowing()
     {
-        if (!isGrowing)
-            yield return null;
-
-        yield return new WaitForSeconds(growTime / bitesToEat);
-        bitesLeft += 1;
-
-        if (bitesLeft == bitesToEat)
-            isGrowing = false;
+        yield return waitAfterEat;
+        while (isGrowing)
+        {
+            if (bitesLeft == bitesToEat)
+            {
+                isGrowing = false;
+                sheepObject.OnEndEating -= HandleUpdateGrowing;
+                yield return null;
+            }
+            yield return new WaitForSeconds(growTime / bitesToEat);
+            if (GetNewSize() != transform.localScale)
+            {
+                yield return null;
+            }
+            bitesLeft += 1;
+        }        
     }
 
     void RestartCurveTime()
     {
         curveTime = 0;
         _oldSize = transform.localScale;
-        Debug.Log("Restart curve time");
     }
 
     void UpdateShrink()
@@ -76,36 +103,34 @@ public class Bush : MonoBehaviour,ISelectableItem
             return;
         }
 
-        Debug.Log(GetNewSize() - _oldSize);
-        Debug.Log("up");
-        Debug.Log(shrinkSize + _oldSize);
-
-        curveTime += Time.deltaTime;
+        curveTime += Time.deltaTime * 3;
         curveTime = Mathf.Clamp01(curveTime);
         transform.localScale = _oldSize + (GetNewSize() - _oldSize) * shrinkCurve.Evaluate(curveTime);
     }
 
-    IEnumerator StartGrow()
-    {
-        yield return new WaitForSeconds(1);
+    void StartGrow()
+    {        
         isGrowing = true;
     }
 
     void EatBehaviour()
     {
+        bitesLeft -= 1;
         if (bitesLeft <= 0 && isGrowing == false)
         {
-            OnEaten?.Invoke();
             StartGrow();
-        }
-        bitesLeft -= 1;
+            SetOutline(false);
+            OnEaten?.Invoke();
+        }        
     }
 
     void InteractionBehaviour(GameObject _objec, RaycastHit _hit)
     {
-        if (_objec != gameObject || isGrowing)
+        if (_objec != gameObject || isGrowing || !sheepObject.CanSelectBush)
             return;
         SelectableManager.Instance.SetSelectable(this);
+        SetOutline(true);
+        OnSelected?.Invoke(this);
     }
     public Vector3 GetPosition()
     {
