@@ -434,12 +434,12 @@ Il2CppSequencePoint g_sequencePointsAssemblyU2DCSharp[1677] =
 	{ 32732, 2, 50, 50, 0, 0, 80, kSequencePointKind_Normal, 0, 66 } /* seqPointIndex: 66 */,
 	{ 32732, 2, 51, 51, 9, 40, 87, kSequencePointKind_Normal, 0, 67 } /* seqPointIndex: 67 */,
 	{ 32732, 2, 51, 51, 9, 40, 93, kSequencePointKind_StepOut, 0, 68 } /* seqPointIndex: 68 */,
-	{ 32732, 2, 52, 52, 9, 44, 99, kSequencePointKind_Normal, 0, 69 } /* seqPointIndex: 69 */,
-	{ 32732, 2, 52, 52, 9, 44, 105, kSequencePointKind_StepOut, 0, 70 } /* seqPointIndex: 70 */,
-	{ 32732, 2, 52, 52, 0, 0, 124, kSequencePointKind_Normal, 0, 71 } /* seqPointIndex: 71 */,
-	{ 32732, 2, 53, 53, 9, 25, 131, kSequencePointKind_Normal, 0, 72 } /* seqPointIndex: 72 */,
-	{ 32732, 2, 53, 53, 9, 25, 137, kSequencePointKind_StepOut, 0, 73 } /* seqPointIndex: 73 */,
-	{ 32732, 2, 54, 54, 5, 6, 143, kSequencePointKind_Normal, 0, 74 } /* seqPointIndex: 74 */,
+	{ 32732, 2, 52, 52, 9, 46, 99, kSequencePointKind_Normal, 0, 69 } /* seqPointIndex: 69 */,
+	{ 32732, 2, 52, 52, 9, 46, 100, kSequencePointKind_StepOut, 0, 70 } /* seqPointIndex: 70 */,
+	{ 32732, 2, 52, 52, 0, 0, 119, kSequencePointKind_Normal, 0, 71 } /* seqPointIndex: 71 */,
+	{ 32732, 2, 53, 53, 9, 25, 126, kSequencePointKind_Normal, 0, 72 } /* seqPointIndex: 72 */,
+	{ 32732, 2, 53, 53, 9, 25, 132, kSequencePointKind_StepOut, 0, 73 } /* seqPointIndex: 73 */,
+	{ 32732, 2, 54, 54, 5, 6, 138, kSequencePointKind_Normal, 0, 74 } /* seqPointIndex: 74 */,
 	{ 32736, 0, 0, 0, 0, 0, -1, kSequencePointKind_Normal, 0, 75 } /* seqPointIndex: 75 */,
 	{ 32736, 0, 0, 0, 0, 0, 16777215, kSequencePointKind_Normal, 0, 76 } /* seqPointIndex: 76 */,
 	{ 32736, 3, 23, 23, 16, 30, 0, kSequencePointKind_Normal, 0, 77 } /* seqPointIndex: 77 */,
@@ -2056,7 +2056,7 @@ static const Il2CppCatchPoint g_catchPoints[1] = { { 0, 0, 0, 0, } };
 static const Il2CppSequencePointSourceFile g_sequencePointSourceFiles[] = {
 { "", { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, //0 
 { "D:\\Remi\\Unity\\ARSheep\\Assets\\Animations\\TestUISignal.cs", { 123, 78, 100, 162, 29, 193, 122, 175, 231, 168, 55, 141, 177, 228, 213, 165} }, //1 
-{ "D:\\Remi\\Unity\\ARSheep\\Assets\\Animations\\UIBoard.cs", { 30, 65, 164, 14, 143, 56, 159, 131, 30, 107, 41, 7, 65, 14, 252, 193} }, //2 
+{ "D:\\Remi\\Unity\\ARSheep\\Assets\\Animations\\UIBoard.cs", { 65, 213, 255, 111, 212, 214, 93, 173, 190, 145, 229, 156, 209, 5, 29, 197} }, //2 
 { "D:\\Remi\\Unity\\ARSheep\\Assets\\ExampleAssets\\Scripts\\AnchorCreator.cs", { 251, 249, 67, 219, 85, 92, 132, 141, 166, 122, 98, 204, 55, 221, 95, 157} }, //3 
 { "D:\\Remi\\Unity\\ARSheep\\Assets\\ExampleAssets\\Scripts\\ARFeatheredPlaneMeshVisualizer.cs", { 19, 17, 205, 109, 10, 68, 124, 87, 1, 56, 38, 148, 206, 102, 118, 0} }, //4 
 { "D:\\Remi\\Unity\\ARSheep\\Assets\\Script\\Bush\\Bush.cs", { 167, 183, 160, 228, 221, 215, 137, 212, 155, 215, 66, 95, 135, 102, 117, 76} }, //5 
@@ -2122,7 +2122,7 @@ static const Il2CppTypeSourceFilePair g_typeSourceFiles[1] = { { 0, 0 } };
 static const Il2CppMethodScope g_methodScopes[66] = 
 {
 	{ 0, 66 },
-	{ 0, 145 },
+	{ 0, 140 },
 	{ 0, 72 },
 	{ 16, 33 },
 	{ 0, 218 },
@@ -2215,7 +2215,7 @@ static const Il2CppMethodHeaderInfo g_methodHeaderInfos[234] =
 	{ 0, 0, 0 } /* System.Void UIBoard::.ctor() */,
 	{ 0, 0, 0 } /* System.Void UIBoard/<StartLoading>d__8::.ctor(System.Int32) */,
 	{ 0, 0, 0 } /* System.Void UIBoard/<StartLoading>d__8::System.IDisposable.Dispose() */,
-	{ 145, 1, 1 } /* System.Boolean UIBoard/<StartLoading>d__8::MoveNext() */,
+	{ 140, 1, 1 } /* System.Boolean UIBoard/<StartLoading>d__8::MoveNext() */,
 	{ 0, 0, 0 } /* System.Object UIBoard/<StartLoading>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current() */,
 	{ 0, 0, 0 } /* System.Void UIBoard/<StartLoading>d__8::System.Collections.IEnumerator.Reset() */,
 	{ 0, 0, 0 } /* System.Object UIBoard/<StartLoading>d__8::System.Collections.IEnumerator.get_Current() */,

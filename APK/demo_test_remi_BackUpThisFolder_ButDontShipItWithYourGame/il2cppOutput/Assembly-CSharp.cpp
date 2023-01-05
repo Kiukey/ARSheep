@@ -3609,6 +3609,8 @@ inline void SingletonTemplate_1__ctor_m8948597B4BE1AA589A0F170028BFF38995820DFD 
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIBoard_StartClosedDoor_mEFE9C8BCF086FB06EFA130005AFCAE2C5234D209 (UIBoard_t88916B556A94185824842CC9EE0C725C949FA142* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.SceneManagement.SceneManager::LoadScene(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManager_LoadScene_m7237839058F581BFCA0A79BB96F6F931469E43CF (String_t* ___sceneName0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.WaitForEndOfFrame::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* __this, const RuntimeMethod* method) ;
 // System.Void UIBoard::StartOpenDoor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIBoard_StartOpenDoor_mCA438CDCA0889747A9D2CBCDE2D9A0C5E6BFF253 (UIBoard_t88916B556A94185824842CC9EE0C725C949FA142* __this, const RuntimeMethod* method) ;
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARAnchor>::GetEnumerator()
@@ -4071,8 +4073,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SheepPlaneBehaviour_Init_m8DB2A163E6B081
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 SheepPlaneBehaviour_get_CurrentPosition_m24C6B337D466B0D5D98630C33658293BE11841DC (SheepPlaneBehaviour_t72F948AA70C9E01E46E664401843CE553BB4217F* __this, const RuntimeMethod* method) ;
 // System.Single SheepPlaneBehaviour::get_BiteSpeed()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float SheepPlaneBehaviour_get_BiteSpeed_m48A70635BFD44F55844A8A12457D9AC5713E5F58 (SheepPlaneBehaviour_t72F948AA70C9E01E46E664401843CE553BB4217F* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.WaitForEndOfFrame::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* __this, const RuntimeMethod* method) ;
 // System.Void SheepPlaneBehaviour::SheepAndBushBehaviour()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SheepPlaneBehaviour_SheepAndBushBehaviour_mD427259BD50CF1FFA142CE8ACA1F3DB398E49022 (SheepPlaneBehaviour_t72F948AA70C9E01E46E664401843CE553BB4217F* __this, const RuntimeMethod* method) ;
 // System.Void SheepPlaneBehaviour::ExplorationBehaviour()
@@ -4904,6 +4904,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CStartLoadingU3Ed__8_MoveNext_mDC4C760
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CStartLoadingU3Ed__8_MoveNext_mDC4C760B89ED12CBE18B13F3FA7E40CB70CEC539_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&U3CStartLoadingU3Ed__8_tD0B9279A84993A7570EF37B7B03304B87929A015_0_0_0_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -4949,7 +4950,7 @@ IL_001d:
 
 IL_001f:
 	{
-		goto IL_007c;
+		goto IL_0077;
 	}
 
 IL_0021:
@@ -4992,12 +4993,12 @@ IL_0050:
 		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
 		SceneManager_LoadScene_m7237839058F581BFCA0A79BB96F6F931469E43CF(L_4, NULL);
 		CHECK_SEQ_POINT(methodExecutionContext, (g_sequencePointsAssemblyU2DCSharp + 68));
-		// yield return new WaitForSeconds(1);
+		// yield return new WaitForEndOfFrame();
 		CHECK_SEQ_POINT(methodExecutionContext, (g_sequencePointsAssemblyU2DCSharp + 69));
 		STORE_SEQ_POINT(methodExecutionContext, (g_sequencePointsAssemblyU2DCSharp + 70));
-		WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* L_5 = (WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3*)il2cpp_codegen_object_new(WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var);
+		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_5 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
 		NullCheck(L_5);
-		WaitForSeconds__ctor_m579F95BADEDBAB4B3A7E302C6EE3995926EF2EFC(L_5, (1.0f), NULL);
+		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_5, NULL);
 		CHECK_SEQ_POINT(methodExecutionContext, (g_sequencePointsAssemblyU2DCSharp + 70));
 		__this->___U3CU3E2__current_1 = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current_1), (void*)L_5);
@@ -5005,7 +5006,7 @@ IL_0050:
 		return (bool)1;
 	}
 
-IL_007c:
+IL_0077:
 	{
 		CHECK_SEQ_POINT(methodExecutionContext, (g_sequencePointsAssemblyU2DCSharp + 71));
 		__this->___U3CU3E1__state_0 = (-1);

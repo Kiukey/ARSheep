@@ -1063,18 +1063,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900062716165774476, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 90bd019719225234ca740addfeffdf14,
+        type: 3}
+    - target: {fileID: 900062716165774476, guid: 020c9d152b3011945aa5319e10e27534,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 900062716165774476, guid: 020c9d152b3011945aa5319e10e27534,
+        type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062716165774476, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062716165774476, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062716308709852, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
@@ -1083,18 +1094,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 900062716308709854, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10843b2734265574584f790bd3eecc68,
+        type: 3}
+    - target: {fileID: 900062716308709854, guid: 020c9d152b3011945aa5319e10e27534,
+        type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062716308709854, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062716308709854, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 900062717230137420, guid: 020c9d152b3011945aa5319e10e27534,
         type: 3}
