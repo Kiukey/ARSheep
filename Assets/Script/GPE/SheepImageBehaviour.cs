@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
 {
@@ -12,7 +13,10 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     [SerializeField,Range(.1f,1000)] float rotationSpeed = 1;
     [SerializeField] BushImageBehaviour target = null;
     [SerializeField] bool returnToInit = false, eating = false, isRotating = false;
+    [SerializeField] bool firstScaling = true, secondScaling = true, thirScaling = true;
     [SerializeField] float eatingTimer = 2.5f;
+    [SerializeField, Range(1.1f, 5f)] float scalingFactor = 1.5f;
+    float timeSpentEating = 0f;
     
 
     Vector3 initialPosition = Vector3.zero;
@@ -27,6 +31,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         MoveToFood();
         ReturnToInitialPos();
         LookAtDestination();
+        CheckEatingProgress();
     }
     private void OnDestroy()
     {
@@ -49,7 +54,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         if (!target || returnToInit || eating || isRotating)
             return;
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
-        if (Vector3.Distance(transform.position, TargetPosition) < 0.09 && target)
+        if (Vector3.Distance(transform.position, TargetPosition) < .15f && target)
             StartEating();
     }
     void ReturnToInitialPos()
@@ -99,5 +104,31 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         target = null;
         returnToInit = true;
         eating = false;
+    }
+
+    void CheckEatingProgress()
+    {
+        if (!eating)
+            return;
+
+        timeSpentEating += Time.deltaTime;
+        Vector3 _scale = target.Mesh.transform.localScale;
+
+        if (timeSpentEating > (eatingTimer / 4) && timeSpentEating < (eatingTimer / 2) && firstScaling)
+        {
+            firstScaling = false;
+            _scale /= 1.5f;
+        }
+        else if (timeSpentEating > (eatingTimer / 2) && timeSpentEating < (eatingTimer / 4 * 3) && secondScaling)
+        {
+            secondScaling = false;
+            _scale /= 2;
+        }
+        else if (timeSpentEating > (eatingTimer / 4 * 3) && timeSpentEating < eatingTimer && thirScaling)
+        {
+            thirScaling = false;
+            _scale /= 2;
+        }
+        target.Mesh.transform.localScale = _scale;
     }
 }

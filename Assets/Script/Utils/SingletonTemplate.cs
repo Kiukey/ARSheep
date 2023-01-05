@@ -8,7 +8,7 @@ public class SingletonTemplate<T> : MonoBehaviour where T : MonoBehaviour
     public static T Instance => instance;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if(instance)
         {
