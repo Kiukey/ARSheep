@@ -14,6 +14,7 @@ public class BushImageBehaviour : MonoBehaviour
 
 	public bool IsGrowing => isGrowing;
 	public bool IsTargettedBySheep => isTargettedBySheep;
+	public MeshRenderer Mesh => mesh;
 
 	private void LateUpdate()
 	{
