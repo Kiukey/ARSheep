@@ -36,5 +36,16 @@ public class BushImageBehaviour : MonoBehaviour
 		if (transform.localScale == scaleSize)
 			isGrowing = false;
         transform.localScale = Vector3.MoveTowards(transform.localScale, scaleSize, Time.deltaTime * growingSpeed);
+		GrowingProgress(transform.localScale);
     }
+
+	float GrowingProgress(Vector3 _currentScale)
+	{
+		float _floatScale = _currentScale.x;
+		float _targetScale = scaleSize.x;
+
+		float _progress = _floatScale / _targetScale;
+
+		return _progress;
+	}
 }
