@@ -59,7 +59,6 @@ public class ImageTracking : MonoBehaviour
             }
             //Instantiate(objects[0], image.transform);
         }
-
         foreach (ARTrackedImage image in obj.updated)
         {
             Debug.Log("Updated :" + image.referenceImage.name);
@@ -73,7 +72,6 @@ public class ImageTracking : MonoBehaviour
                         if (!_sheep)
                             return;
                         _sheep.SetTarget(bush);
-                        bush.SetIsTargetBySheep(true);
                     }
                 }
             }
