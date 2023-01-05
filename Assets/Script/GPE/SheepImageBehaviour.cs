@@ -6,11 +6,14 @@ using UnityEngine;
 public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
 {
     public event Action<SheepImageBehaviour> OnSheepEat = null;
+    public event Action<SheepImageBehaviour> OnStartSheepEat = null;
 
-    [SerializeField,Range(.1f,10)] float movementSpeed = 1;
+    [SerializeField, Range(.1f, 10)] float movementSpeed = 1;
+    [SerializeField,Range(.1f,1000)] float rotationSpeed = 1;
     [SerializeField] BushImageBehaviour target = null;
-    [SerializeField] bool returnToInit = false;
-
+    [SerializeField] bool returnToInit = false, eating = false;
+    [SerializeField] float eatingTimer = 2.5f;
+    
 
     Vector3 initialPosition = Vector3.zero;
     public Vector3 TargetPosition => target.transform.position;
@@ -23,6 +26,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     {
         MoveToFood();
         ReturnToInitialPos();
+        LookAtDestination();
     }
     private void OnDestroy()
     {
@@ -36,20 +40,16 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
 
     void StartEating()
     {
-        OnSheepEat?.Invoke(this);
-        //target.gameObject.SetActive(false);
-        target.DeActivate();
-        //Destroy(target);
-        target = null;
-        //transform.position = initialPosition;
-        returnToInit = true;
+        OnStartSheepEat?.Invoke(this);
+        eating = true;
+        StartCoroutine(EatingAfterTimer());
     }
     void MoveToFood()
     {
-        if (!target || returnToInit)
+        if (!target || returnToInit || eating)
             return;
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
-        if (Vector3.Distance(transform.position, TargetPosition) < 0.02 && target)
+        if (Vector3.Distance(transform.position, TargetPosition) < 0.09 && target)
             StartEating();
     }
     void ReturnToInitialPos()
@@ -66,9 +66,19 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         if (target)
             return;
         target = _target;
+        _target.SetIsTargetBySheep(true);
         initialPosition = transform.position;
         returnToInit = false;
         Debug.Log("Set target");
+    }
+    void LookAtDestination()
+    {
+        if (!target && !returnToInit)
+            return;
+
+        Vector3 _fwd = ( (target ? TargetPosition : initialPosition) - transform.position).normalized;
+        Quaternion _targetRotation = Quaternion.LookRotation(_fwd);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, Time.deltaTime * rotationSpeed);
     }
     public void Register()
     {
@@ -77,5 +87,17 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     public void Unregister()
     {
         SheepImageManager.Instance.RemoveEntity(this);
+    }
+
+    IEnumerator EatingAfterTimer()
+    {
+        yield return new WaitForSeconds(eatingTimer);
+        if (!target)
+            yield break;
+        OnSheepEat?.Invoke(this);
+        target.DeActivate();
+        target = null;
+        returnToInit = true;
+        eating = false;
     }
 }
