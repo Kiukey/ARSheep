@@ -8,24 +8,25 @@ using Random = UnityEngine.Random;
 public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
 {
     #region Event
-    public event Action OnStartSelect = null, OnEndSelect = null, OnStartMoveToEat = null, OnEndMoveToEat = null;
+    public event Action OnStartSelect = null, OnEndSelect = null, OnStartMoveToEat = null, OnEndMoveToEat = null, OnStartEating = null, OnEndEating, OnBite = null;
     #endregion
     #region Fields
-    [SerializeField] float range, moveSpeed, eatingSpeed;
+    [SerializeField] float range, moveSpeed, eatingSpeed, rangeToEat;
     [SerializeField] bool enableExploration = true;
 
     bool selected = false, moveToEat = false, bushSelected = false;
     Vector3 spawnPosition;
     Vector3 target;
     Bush gameObjectBush = null;
-    WaitForSeconds waitEatingSpeed;
+    WaitForSeconds waitBiteSpeed;
     WaitForEndOfFrame waitForFrame;
     #endregion
     #region Properties
     public Vector3 CurrentPosition => GetPosition();
     public Quaternion CurrentRotation => transform.rotation;
     public bool EnableExploration { get => enableExploration; set => enableExploration = value; }
-
+    public float NBite => (eatingSpeed * 4.0f) / 5.0f;// 4 bite in 5 seconds
+    public float BiteSpeed => eatingSpeed / NBite;
     #endregion
     void Start()
     {
@@ -37,7 +38,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
         CustomClicker.Instance.OnClickObject += SelectBush;
         spawnPosition = CurrentPosition;
         target = CurrentPosition;
-        waitEatingSpeed = new WaitForSeconds(eatingSpeed);
+        waitBiteSpeed = new WaitForSeconds(BiteSpeed);
         waitForFrame = new WaitForEndOfFrame();
     }
     void Update()
@@ -54,15 +55,15 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
             GenerateRandomTargetFromSpawn();
         MoveToTarget();
     }
-    bool IsAtTarget()
+    bool IsAtTarget(float _range = float.Epsilon)
     {
-        return Vector3.Distance(CurrentPosition, target) < float.Epsilon;
+        return Vector3.Distance(CurrentPosition, target) < _range;
     }
     void GenerateRandomTargetFromSpawn()
     {
         float _x = Random.Range(-range, range);
         float _z = Random.Range(-range, range);
-        target = new Vector3(_x, 0.0f,_z) + spawnPosition;
+        target = new Vector3(_x, 0.0f, _z) + spawnPosition;
     }
     void MoveToTarget()
     {
@@ -127,20 +128,39 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
 
         if (!moveToEat)
             return;
-        if (IsAtTarget())
+        if (IsAtTarget(rangeToEat) && RotateTowards())
         {
             moveToEat = false;
             OnEndMoveToEat?.Invoke();
             StartCoroutine(EatBushBehaviour());
         }
-        MoveToTarget();
+        if(!IsAtTarget(rangeToEat))
+            MoveToTarget();
     }
     IEnumerator EatBushBehaviour()
     {
-        yield return waitEatingSpeed;
+        OnStartEating?.Invoke();
+        gameObjectBush.OnEaten += HandleOnEaten;
+        yield return BiteBehaviour().GetEnumerator();        
+        yield return waitForFrame;        
+    }
+    void HandleOnEaten()
+    {
         DestroyBush();
-        yield return waitForFrame;
         ReturnToSpawn();
+    }
+    IEnumerable BiteBehaviour()
+    {
+        float _aux = 0;
+        while (true)
+        {
+            if (_aux >= NBite)
+                yield break;
+            yield return waitForFrame;
+            OnBite?.Invoke();
+            _aux++;
+            yield return waitBiteSpeed;
+        }        
     }
     void ReturnToSpawn()
     {
@@ -149,8 +169,9 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     void DestroyBush()
     {
+        gameObjectBush.OnEaten -= HandleOnEaten;
+        OnEndEating?.Invoke();
         bushSelected = false;
-        Destroy(gameObjectBush.gameObject);
         gameObjectBush = null;
     }
     public Vector3 GetPosition()
