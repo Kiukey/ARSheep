@@ -21,6 +21,6 @@ public class OpenScene : MonoBehaviour
 
     void OnButtonClick()
     {
-       SceneManager.LoadScene(sceneName);
+        UIBoard.Instance.LoadScene(sceneName);
     }
 }
