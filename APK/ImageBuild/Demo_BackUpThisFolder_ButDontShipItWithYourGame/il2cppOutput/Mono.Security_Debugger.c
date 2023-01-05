@@ -57,7 +57,7 @@ Il2CppSequencePoint g_sequencePointsMono_Security[1] = { { 0, 0, 0, 0, 0, 0, 0, 
 #endif
 #if IL2CPP_MONO_DEBUGGER
 static const Il2CppCatchPoint g_catchPoints[] = {
-{ 33355, 6297, 46, 0, -1 },
+{ 33404, 6296, 46, 0, -1 },
 };
 #else
 static const Il2CppCatchPoint g_catchPoints[1] = { { 0, 0, 0, 0, } };
