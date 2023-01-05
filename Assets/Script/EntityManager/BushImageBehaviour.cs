@@ -10,6 +10,7 @@ public class BushImageBehaviour : MonoBehaviour
 	[SerializeField] float growingSpeed = 1f;
 	[SerializeField] Vector3 scaleSize = Vector3.one;
 
+	public bool IsGrowing => isGrowing;
 	public bool IsTargettedBySheep => isTargettedBySheep;
 
 	private void LateUpdate()
