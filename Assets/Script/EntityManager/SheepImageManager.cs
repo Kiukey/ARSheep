@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SheepImageManager : MonoBehaviour
+public class SheepImageManager : SingletonTemplate<SheepImageManager>
 {
-    #region InitSingleton
+/*    #region InitSingleton
     static SheepImageManager instance;
     public static SheepImageManager Instance => instance;
 
@@ -17,7 +17,7 @@ public class SheepImageManager : MonoBehaviour
         }
         instance = this;
     }
-    #endregion
+    #endregion*/
 
     [SerializeField] List<SheepImageBehaviour> allEntities = null;
 
@@ -33,16 +33,19 @@ public class SheepImageManager : MonoBehaviour
     {
         allEntities.RemoveAt(_index);
     }
-    public SheepImageBehaviour CheckDistance(Transform _target)
+  /*  public SheepImageBehaviour CheckDistance(Transform _target, out float distance)
     {
+        distance = 1;
         for (int i = 0; i < allEntities.Count; i++)
         {
-            if (Vector3.Distance(allEntities[i].transform.position, _target.position) < 1f)
+            distance = Vector3.Distance(allEntities[i].transform.position, _target.position);
+            if(distance < .5f)
             {
-                Debug.Log("Found Sheep at distance");
                 return allEntities[i];
             }
         }
         return null;
-    }
+    }*/
+
+    public SheepImageBehaviour GetFirstSheep() => allEntities.Count >0 ? allEntities[0] : null;
 }
