@@ -40,7 +40,6 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     private void Initialize()
     {
         Register();
-        OnSheepEat += (me) => Debug.Log("eating");
     }
 
     void StartEating()
