@@ -54,7 +54,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         if (!target || returnToInit || eating || isRotating)
             return;
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
-        if (Vector3.Distance(transform.position, TargetPosition) < 0.09 && target)
+        if (Vector3.Distance(transform.position, TargetPosition) < .15f && target)
             StartEating();
     }
     void ReturnToInitialPos()
