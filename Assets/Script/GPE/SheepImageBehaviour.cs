@@ -28,6 +28,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     }
     private void LateUpdate()
     {
+        return;
         MoveToFood();
         ReturnToInitialPos();
         LookAtDestination();
@@ -40,7 +41,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     private void Initialize()
     {
         Register();
-        OnSheepEat += (me) => Debug.Log("eating");
+        gameObject.SetActive(false);
     }
 
     void StartEating()

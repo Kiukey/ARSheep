@@ -545,6 +545,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* Math_Max_mD1AD971AB9981B8A59BC5B5BEB7DD6A5A
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Min_m1C7DD94B2E3BECC3C15A8B6899E88178DC539397_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Min_m1F346FEDDC77AC1EC0C4EF1AC6BA59F0EC7980F8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Min_m5721B54E3DBEE8C9FC599B1561D098235B11EE81_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Math_Min_m6F49B85AE4935E4AF3AB6128B3B5E55A6C4A1716_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Min_mB41DB89BB991289571A046270A924C0EEAA2C4BC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Round_mA90F6B1668D55BC6C538EBF0302B30E406E242B0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Math_Sign_mA4D918D42B753CFEF3AC049AEF14C7FDE07FFD7E_RuntimeMethod_var;
@@ -8249,6 +8250,51 @@ IL_0006:
 	{
 		uint32_t L_3 = ___val10;
 		return L_3;
+	}
+}
+// System.Double System.Math::Min(System.Double,System.Double)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Min_m6F49B85AE4935E4AF3AB6128B3B5E55A6C4A1716 (double ___val10, double ___val21, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_Min_m6F49B85AE4935E4AF3AB6128B3B5E55A6C4A1716_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	DECLARE_METHOD_EXEC_CTX(methodExecutionContext, Math_Min_m6F49B85AE4935E4AF3AB6128B3B5E55A6C4A1716_RuntimeMethod_var, NULL, NULL, NULL);
+	CHECK_PAUSE_POINT;
+	{
+		double L_0 = ___val10;
+		double L_1 = ___val21;
+		if ((!(((double)L_0) < ((double)L_1))))
+		{
+			goto IL_0006;
+		}
+	}
+	{
+		double L_2 = ___val10;
+		return L_2;
+	}
+
+IL_0006:
+	{
+		double L_3 = ___val10;
+		bool L_4;
+		L_4 = Double_IsNaN_m752DA1554CE1712F292DAC4AEC30869AD7234E18_inline(L_3, NULL);
+		if (!L_4)
+		{
+			goto IL_0010;
+		}
+	}
+	{
+		double L_5 = ___val10;
+		return L_5;
+	}
+
+IL_0010:
+	{
+		double L_6 = ___val21;
+		return L_6;
 	}
 }
 // System.Int32 System.Math::Min(System.Int32,System.Int32)
