@@ -6,25 +6,34 @@ using UnityEngine;
 public class BushImageBehaviour : MonoBehaviour
 {
 	[SerializeField] bool isTargettedBySheep = false;
-	[SerializeField] MeshRenderer mesh = null;
+	[SerializeField] bool isGrowing = false;
+	[SerializeField] float growingSpeed = 1f;
+	[SerializeField] Vector3 scaleSize = Vector3.one;
+
 	public bool IsTargettedBySheep => isTargettedBySheep;
-	IEnumerator SpawnTimer()
+
+	private void LateUpdate()
 	{
-		yield return new WaitForSeconds(3);
-		isTargettedBySheep=false;
-		if (!mesh)
-			yield break;
-		mesh.enabled = true;
+		GrowBush();
 	}
+
 	public void SetIsTargetBySheep(bool _enable)
 	{
 		isTargettedBySheep=_enable;
 	}
 	public void DeActivate()
 	{
-		if (!mesh)
-			return;
-		mesh.enabled = false;
-		StartCoroutine(SpawnTimer());
+		transform.localScale = Vector3.zero;
+		isTargettedBySheep = false;
+		isGrowing = true;
 	}
+
+	void GrowBush()
+	{
+		if (!isGrowing)
+			return;
+		if (transform.localScale == scaleSize)
+			isGrowing = false;
+        transform.localScale = Vector3.MoveTowards(transform.localScale, scaleSize, Time.deltaTime * growingSpeed);
+    }
 }
