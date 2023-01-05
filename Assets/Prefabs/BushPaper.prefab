@@ -139,6 +139,7 @@ MonoBehaviour:
   isTargettedBySheep: 0
   isGrowing: 0
   growingSpeed: 0.02
+  ui: {fileID: 8316669899193875180}
   scaleSize: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &8415372953644565953
 GameObject:
