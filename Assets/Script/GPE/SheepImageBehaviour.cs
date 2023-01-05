@@ -63,7 +63,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     }
     public void SetTarget(BushImageBehaviour _target)
     {
-        if (target)
+        if (target || _target.IsGrowing)
             return;
         target = _target;
         _target.SetIsTargetBySheep(true);
