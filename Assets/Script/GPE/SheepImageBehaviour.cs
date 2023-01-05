@@ -11,7 +11,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     [SerializeField, Range(.1f, 10)] float movementSpeed = 1;
     [SerializeField,Range(.1f,1000)] float rotationSpeed = 1;
     [SerializeField] BushImageBehaviour target = null;
-    [SerializeField] bool returnToInit = false, eating = false;
+    [SerializeField] bool returnToInit = false, eating = false, isRotating = false;
     [SerializeField] float eatingTimer = 2.5f;
     
 
@@ -46,7 +46,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     }
     void MoveToFood()
     {
-        if (!target || returnToInit || eating)
+        if (!target || returnToInit || eating || isRotating)
             return;
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, Time.deltaTime * movementSpeed);
         if (Vector3.Distance(transform.position, TargetPosition) < 0.09 && target)
@@ -54,20 +54,20 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     }
     void ReturnToInitialPos()
     {
-        if (!returnToInit)
+        if (!returnToInit || isRotating)
             return;
         transform.position = Vector3.MoveTowards(transform.position, initialPosition, Time.deltaTime * movementSpeed);
-
         if (Vector3.Distance(transform.position, initialPosition) < 0.02)
             returnToInit = false;
     }
-    public void SetTarget(BushImageBehaviour _target)
+    public void SetTarget(BushImageBehaviour _target, Vector3 imagePosition)
     {
-        if (target)
+        if (target || returnToInit)
             return;
         target = _target;
         _target.SetIsTargetBySheep(true);
-        initialPosition = transform.position;
+        initialPosition = imagePosition;
+        Debug.Log("Initial position :" + initialPosition);
         returnToInit = false;
         Debug.Log("Set target");
     }
@@ -79,6 +79,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         Vector3 _fwd = ( (target ? TargetPosition : initialPosition) - transform.position).normalized;
         Quaternion _targetRotation = Quaternion.LookRotation(_fwd);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, Time.deltaTime * rotationSpeed);
+        isRotating = Vector3.Distance(transform.eulerAngles, _targetRotation.eulerAngles) > 0.1f;
     }
     public void Register()
     {
@@ -88,7 +89,6 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     {
         SheepImageManager.Instance.RemoveEntity(this);
     }
-
     IEnumerator EatingAfterTimer()
     {
         yield return new WaitForSeconds(eatingTimer);

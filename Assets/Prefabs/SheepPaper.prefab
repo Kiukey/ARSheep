@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0.1
-  rotationSpeed: 50
+  rotationSpeed: 150
   target: {fileID: 0}
   returnToInit: 0
   eating: 0

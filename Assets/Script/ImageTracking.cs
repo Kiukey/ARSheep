@@ -66,12 +66,12 @@ public class ImageTracking : MonoBehaviour
             {
                 if (image.referenceImage.name.Equals(imageLibrary[i].name))
                 {
-                    if (i == 0 && !bush.IsTargettedBySheep)
+                    if (i == 1 && !bush.IsTargettedBySheep)
                     {
                         SheepImageBehaviour _sheep = SheepImageManager.Instance.CheckDistance(bush.transform);
                         if (!_sheep)
                             return;
-                        _sheep.SetTarget(bush);
+                        _sheep.SetTarget(bush,image.transform.position);
                     }
                 }
             }
