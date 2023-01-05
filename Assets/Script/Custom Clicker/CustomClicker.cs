@@ -71,4 +71,6 @@ public class CustomClicker : SingletonTemplate<CustomClicker>
         }
         Instantiate(bushObject, _spawnVector, transform.rotation);
     }
+
+    public GameObject GetSheepObject() => sheepSpawnObject;
 }
