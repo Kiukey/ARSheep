@@ -37,13 +37,10 @@ public class Bush : MonoBehaviour,ISelectableItem
         bitesLeft = bitesToEat;
         originalSize = transform.localScale - shrinkSize;
         CustomClicker.Instance.OnClickObject += InteractionBehaviour;
-        OnSelected += (b) =>
-        {
-            Debug.Log("in bush selected");
-            outline.enabled = true;
-        };
+        
         waitAfterEat = new WaitForSeconds(timeAfterEat);
-        sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();        
+        sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();
+        sheepObject.OnStartMoveToEat += () => outline.enabled = true;
         outline.enabled = false;
         sheepObject.OnStartEating += (b) =>
         {
