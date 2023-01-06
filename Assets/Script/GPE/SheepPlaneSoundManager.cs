@@ -11,7 +11,8 @@ public class SheepPlaneSoundManager : MonoBehaviour
     [SerializeField] SheepPlaneBehaviour sheep;
     [SerializeField] List<AudioClip> audioListSheep = new List<AudioClip>();
     [SerializeField] AudioClip audioSheepEat;
-    //[SerializeField] float time
+    [SerializeField] float timeRatePerSec = 6;
+    [SerializeField] float ratePercent = 80;
     bool isEating = false;
     #endregion
     #region Init
@@ -21,7 +22,7 @@ public class SheepPlaneSoundManager : MonoBehaviour
     }
     void Init()
     {
-        Time.fixedDeltaTime = 6;
+        Time.fixedDeltaTime = timeRatePerSec;
         sheep.OnStartEating += PlaySheepEatSound;
         sheep.OnEndEating += StopSheepEatSound;
     }
@@ -44,8 +45,8 @@ public class SheepPlaneSoundManager : MonoBehaviour
     #region Sheep Sound
     void FixedUpdate()
     {
-        int _rand = Random.Range(0, 10);
-        if (_rand < 8)
+        int _rand = Random.Range(0, 101);
+        if (_rand < ratePercent)
         {
             PlayRandomSheepSound();
         }
