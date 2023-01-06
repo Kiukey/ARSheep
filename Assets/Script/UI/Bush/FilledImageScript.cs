@@ -8,11 +8,14 @@ public class FilledImageScript : MonoBehaviour
 
     [SerializeField] Image filledImage;
     [SerializeField] Camera cam;
+    [SerializeField] BushImageBehaviour bush;
     // Start is called before the first frame update
     void Start()
     {
         filledImage.fillAmount = 0;
         filledImage.enabled = false;
+        bush.OnStartGrowingBush += StartGrowing;
+        bush.OnGrowingBush += UpdateFilled;
         cam = Camera.main;
     }
     public void EndGrowing()

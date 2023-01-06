@@ -7,6 +7,7 @@ public class ExitButtonScript : MonoBehaviour
 {
 
     [SerializeField] Button exitButton = null;
+    [SerializeField] AudioSource exitAudioButton = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class ExitButtonScript : MonoBehaviour
 
     public void ExitGame()
     {
+        exitAudioButton.Play();
         Application.Quit();
     }
 

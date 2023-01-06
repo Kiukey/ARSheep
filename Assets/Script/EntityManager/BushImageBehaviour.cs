@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class BushImageBehaviour : MonoBehaviour
 {
+	public event Action<float> OnGrowingBush;
+	public event Action OnStartGrowingBush;
+	public event Action OnEndGrowingBush;
+
 	[SerializeField] bool isTargettedBySheep = false;
 	[SerializeField] bool isGrowing = false;
 	[SerializeField] float growingSpeed = 1f;
-	[SerializeField] FilledImageScript ui = null;
 	[SerializeField] Vector3 scaleSize = Vector3.one;
 	[SerializeField] MeshRenderer mesh = null;
 
@@ -34,8 +37,8 @@ public class BushImageBehaviour : MonoBehaviour
 	{
         mesh.transform.localScale = Vector3.zero;
 		isTargettedBySheep = false;
-		ui.StartGrowing();
 		isGrowing = true;
+		OnStartGrowingBush?.Invoke();
 	}
 
 	void GrowBush()
@@ -43,9 +46,12 @@ public class BushImageBehaviour : MonoBehaviour
 		if (!isGrowing)
 			return;
 		if (mesh.transform.localScale == scaleSize)
+        {
 			isGrowing = false;
+			OnEndGrowingBush?.Invoke();
+        }
 		mesh.transform.localScale = Vector3.MoveTowards(mesh.transform.localScale, scaleSize, Time.deltaTime * growingSpeed);
-		ui.UpdateFilled(GrowingProgress(mesh.transform.localScale));
+		OnGrowingBush?.Invoke(GrowingProgress(transform.localScale));
     }
 
 	float GrowingProgress(Vector3 _currentScale)
