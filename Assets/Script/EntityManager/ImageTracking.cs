@@ -15,7 +15,7 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
     //prefabs
     [SerializeField] List<GameObject> objects = new List<GameObject>();
     //sheep
-    [SerializeField] SheepImageBehaviour sheep;
+    [SerializeField] SheepImageBehaviour sheep = null;
     //bush
     [SerializeField] BushImageBehaviour bush = null;
 

@@ -13,7 +13,7 @@ public class SheepImageBehaviour : MonoBehaviour
     [SerializeField,Range(.1f,1000)] float rotationSpeed = 1;
     [SerializeField] BushImageBehaviour target = null;
     [SerializeField] bool returnToInit = false, eating = false, isRotating = false;
-    [SerializeField] bool firstScaling = true, secondScaling = true, thirScaling = true;
+    [SerializeField] bool firstScaling = true, secondScaling = true, thirdScaling = true;
     [SerializeField] float eatingTimer = 2.5f;
     [SerializeField, Range(1.1f, 5f)] float scalingFactor = 1.5f;
     float timeSpentEating = 0f;
@@ -84,6 +84,7 @@ public class SheepImageBehaviour : MonoBehaviour
             yield break;
         OnSheepEat?.Invoke(this);
         target.DeActivate();
+        ResetScaling();
         target = null;
         returnToInit = true;
         eating = false;
@@ -92,7 +93,6 @@ public class SheepImageBehaviour : MonoBehaviour
     {
         if (!eating)
             return;
-
         timeSpentEating += Time.deltaTime;
         Vector3 _scale = target.Mesh.transform.localScale;
 
@@ -106,9 +106,9 @@ public class SheepImageBehaviour : MonoBehaviour
             secondScaling = false;
             _scale /= 2;
         }
-        else if (timeSpentEating > (eatingTimer / 4 * 3) && timeSpentEating < eatingTimer && thirScaling)
+        else if (timeSpentEating > (eatingTimer / 4 * 3) && timeSpentEating < eatingTimer && thirdScaling)
         {
-            thirScaling = false;
+            thirdScaling = false;
             _scale /= 2;
         }
         target.Mesh.transform.localScale = _scale;
@@ -120,5 +120,13 @@ public class SheepImageBehaviour : MonoBehaviour
 
         target.SetIsTargetBySheep(false);
         target = null;
+    }
+
+    public void ResetScaling()
+    {
+        firstScaling = true;
+        secondScaling = true;
+        thirdScaling = true;
+        timeSpentEating = 0;
     }
 }

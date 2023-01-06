@@ -22,6 +22,7 @@ public class BushImageBehaviour : MonoBehaviour
     private void Start()
     {
 		gameObject.SetActive(false);
+		mesh.transform.localScale = scaleSize;
     }
 
     private void LateUpdate()
@@ -62,5 +63,10 @@ public class BushImageBehaviour : MonoBehaviour
 		float _progress = _floatScale / _targetScale;
 
 		return _progress;
+	}
+
+	public void SubActionOnEndGrowing(Action _callback)
+	{
+		OnEndGrowingBush += _callback;
 	}
 }
