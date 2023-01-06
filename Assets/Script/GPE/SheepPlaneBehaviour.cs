@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Outline))]
 public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
 {
     #region Event
@@ -14,7 +15,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     #region Fields
     [SerializeField] float range, moveSpeed, eatingSpeed, rangeToEat;
     [SerializeField] bool enableExploration = true;
-    [SerializeField] MonoBehaviour outline;
+    [SerializeField] Outline outline;
     
 
     bool selected = false, moveToEat = false, bushSelected = false;
