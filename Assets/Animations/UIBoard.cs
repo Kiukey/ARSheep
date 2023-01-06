@@ -49,7 +49,7 @@ public class UIBoard : SingletonTemplate<UIBoard>
         StartClosedDoor();
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(_scene);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForEndOfFrame();
         StartOpenDoor();
     }
 }

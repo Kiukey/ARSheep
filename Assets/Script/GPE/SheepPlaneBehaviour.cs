@@ -1,18 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider))]
 public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
 {
     #region Event
-    public event Action OnStartSelect = null, OnEndSelect = null, OnStartMoveToEat = null, OnEndMoveToEat = null, OnStartEating = null, OnEndEating, OnBite = null;
+    public event Action OnStartSelect = null, OnEndSelect = null, OnStartMoveToEat = null, OnEndMoveToEat = null, OnEndEating, OnBite = null;
+    public event Action<Bush> OnStartEating = null;
     #endregion
     #region Fields
     [SerializeField] float range, moveSpeed, eatingSpeed, rangeToEat;
     [SerializeField] bool enableExploration = true;
+    [SerializeField] MonoBehaviour outline;
+    
 
     bool selected = false, moveToEat = false, bushSelected = false;
     Vector3 spawnPosition;
@@ -22,11 +25,14 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     WaitForEndOfFrame waitForFrame;
     #endregion
     #region Properties
+    public bool CanSelectBush => !bushSelected;
+    public Bush TargetBush => gameObjectBush;
     public Vector3 CurrentPosition => GetPosition();
     public Quaternion CurrentRotation => transform.rotation;
     public bool EnableExploration { get => enableExploration; set => enableExploration = value; }
     public float NBite => (eatingSpeed * 4.0f) / 5.0f;// 4 bite in 5 seconds
-    public float BiteSpeed => eatingSpeed / NBite;
+    public float BiteSpeed => eatingSpeed / NBite; 
+    public float Range { get => range; set => range = value; }
     #endregion
     void Start()
     {
@@ -36,6 +42,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     {
         CustomClicker.Instance.OnClickObject += InteractionBehaviour;
         CustomClicker.Instance.OnClickObject += SelectBush;
+        outline.enabled = false;
         spawnPosition = CurrentPosition;
         target = CurrentPosition;
         waitBiteSpeed = new WaitForSeconds(BiteSpeed);
@@ -51,8 +58,8 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     {
         if(!enableExploration)
             return;
-        if (IsAtTarget())
-            GenerateRandomTargetFromSpawn();
+        if (IsAtTarget())        
+            GenerateRandomTargetFromSpawn();        
         MoveToTarget();
     }
     bool IsAtTarget(float _range = float.Epsilon)
@@ -86,6 +93,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
         selected = !selected;
         if (selected)
         {
+            outline.enabled = true;
             SelectableManager.Instance.SetSelectable(this);
             OnStartSelect?.Invoke();
         }
@@ -100,9 +108,13 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
             return;
         if (IsBush(_objec))
         {
-            bushSelected = true;
-            target = _objec.transform.position;
+            gameObjectBush.OnSelected += HandleSafeSelect;
         }
+    }
+    void HandleSafeSelect(Bush _bush)
+    {
+        bushSelected = true;
+        target = _bush.transform.position;
     }
     bool IsBush(GameObject _objec)
     {
@@ -111,6 +123,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     void EndSelection()
     {
+        outline.enabled = false;
         SelectableManager.Instance.SetSelectable(null);        
         OnEndSelect?.Invoke();
     }
@@ -139,7 +152,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     IEnumerator EatBushBehaviour()
     {
-        OnStartEating?.Invoke();
+        OnStartEating?.Invoke(gameObjectBush);
         gameObjectBush.OnEaten += HandleOnEaten;
         yield return BiteBehaviour().GetEnumerator();        
         yield return waitForFrame;        
@@ -151,20 +164,18 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
     }
     IEnumerable BiteBehaviour()
     {
-        float _aux = 0;
         while (true)
         {
-            if (_aux >= NBite)
-                yield break;
+            if (!gameObjectBush || gameObjectBush.BitesLeft == 0)
+                break;
             yield return waitForFrame;
             OnBite?.Invoke();
-            _aux++;
             yield return waitBiteSpeed;
-        }        
+        }
+        yield break;
     }
     void ReturnToSpawn()
     {
-        EndSelection();
         enableExploration = true;        
     }
     void DestroyBush()
@@ -172,6 +183,7 @@ public class SheepPlaneBehaviour : MonoBehaviour, ISelectableItem
         gameObjectBush.OnEaten -= HandleOnEaten;
         OnEndEating?.Invoke();
         bushSelected = false;
+        gameObjectBush.OnSelected -= HandleSafeSelect;
         gameObjectBush = null;
     }
     public Vector3 GetPosition()
