@@ -8,18 +8,8 @@ public class UIBoard : SingletonTemplate<UIBoard>
 {
     [SerializeField] PlayableDirector openDoor;
     [SerializeField] PlayableDirector closeDoor;
+    [SerializeField] AudioSource sheepClose;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     protected override void Awake()
     {
@@ -47,7 +37,8 @@ public class UIBoard : SingletonTemplate<UIBoard>
     IEnumerator StartLoading(string _scene)
     {
         StartClosedDoor();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.4f);
+        sheepClose.Play();
         SceneManager.LoadScene(_scene);
         yield return new WaitForEndOfFrame();
         StartOpenDoor();
