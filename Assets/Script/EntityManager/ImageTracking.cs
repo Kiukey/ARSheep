@@ -123,11 +123,11 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
         bush = Instantiate(objects[0]).GetComponent<BushImageBehaviour>();
         sheep = Instantiate(objects[1]).GetComponent<SheepImageBehaviour>();
     }
-    private void OnGUI()
+/*    private void OnGUI()
     {
         GUILayout.Box($"Sheep {(sheep == null ? "null" : "valid")}");
         GUILayout.Box($"Bush {(bush == null ? "null" : "valid")}");
-    }
+    }*/
 }
 
 
