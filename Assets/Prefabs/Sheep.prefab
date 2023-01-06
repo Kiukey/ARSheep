@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: -2223686874931666014}
   - component: {fileID: 6644458868604386165}
   - component: {fileID: -6043351978607409350}
+  - component: {fileID: -1865517614244092749}
   m_Layer: 3
   m_Name: Sheep
   m_TagString: Untagged
@@ -345,7 +346,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   eatingSpeed: 5
   rangeToEat: 0.4
-  enableExploration: 1
+  enableExploration: 0
   outline: {fileID: 6644458868604386165}
 --- !u!114 &6644458868604386165
 MonoBehaviour:
@@ -11339,6 +11340,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1865517614244092749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009302529967678435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a708e660a6e47c49991ff707dcb047f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: -6043351978607409350}
+  sheep: {fileID: -2223686874931666014}
+  audioListSheep:
+  - {fileID: 8300000, guid: 0cb5d29cf0386cf4ebd24ea5b867ea57, type: 3}
+  - {fileID: 8300000, guid: bf1af8efb68e63e45b213c9e743ae885, type: 3}
+  - {fileID: 8300000, guid: 11195be6c314c984ab3bfb28746aeeae, type: 3}
+  - {fileID: 8300000, guid: cef6ed22e2f3cf8479e708d7f6152278, type: 3}
+  - {fileID: 8300000, guid: ed7a79fef1f21f24e83dca1b445fab53, type: 3}
+  - {fileID: 8300000, guid: b946d319beff2bc40a5c85a0ce915b03, type: 3}
+  - {fileID: 8300000, guid: c79e67a9a992a1944b38b4821f5bb71c, type: 3}
+  audioSheepEat: {fileID: 8300000, guid: 8e736ef0db1f06b43a2cd7c8a9c7a8dd, type: 3}
+  timeRatePerSec: 6
+  ratePercent: 80
 --- !u!1 &1979164272367492435
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4386373554001277761}
   - component: {fileID: 8013616808047501860}
   - component: {fileID: -1938050884460396644}
+  - component: {fileID: 3690673290653703484}
   m_Layer: 3
   m_Name: Bush
   m_TagString: Untagged
@@ -219,6 +220,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3690673290653703484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565245504574000922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a47b9d659de9634fbae5ac871ad4e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: -1938050884460396644}
+  bush: {fileID: 2867157555808839862}
+  audioList:
+  - {fileID: 8300000, guid: 1c0c2ad9e378c5147a322ca631007106, type: 3}
+  - {fileID: 8300000, guid: 9184ae99f0a61b74cbde2c3d9aa7e78a, type: 3}
 --- !u!1001 &5716646466573645172
 PrefabInstance:
   m_ObjectHideFlags: 0
