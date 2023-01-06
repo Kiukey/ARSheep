@@ -84,9 +84,7 @@ public class SheepImageBehaviour : MonoBehaviour
             yield break;
         OnSheepEat?.Invoke(this);
         target.DeActivate();
-        firstScaling = true;
-        secondScaling = true;
-        thirdScaling = true;
+        ResetScaling();
         target = null;
         returnToInit = true;
         eating = false;
@@ -95,7 +93,6 @@ public class SheepImageBehaviour : MonoBehaviour
     {
         if (!eating)
             return;
-
         timeSpentEating += Time.deltaTime;
         Vector3 _scale = target.Mesh.transform.localScale;
 
@@ -120,5 +117,13 @@ public class SheepImageBehaviour : MonoBehaviour
     {
         target.SetIsTargetBySheep(false);
         target = null;
+    }
+
+    public void ResetScaling()
+    {
+        firstScaling = true;
+        secondScaling = true;
+        thirdScaling = true;
+        timeSpentEating = 0;
     }
 }

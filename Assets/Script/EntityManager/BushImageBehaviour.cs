@@ -64,4 +64,9 @@ public class BushImageBehaviour : MonoBehaviour
 
 		return _progress;
 	}
+
+	public void SubActionOnEndGrowing(Action _callback)
+	{
+		OnEndGrowingBush += _callback;
+	}
 }
