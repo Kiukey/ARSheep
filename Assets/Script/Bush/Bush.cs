@@ -8,7 +8,7 @@ using System;
 [RequireComponent(typeof(Outline))]
 public class Bush : MonoBehaviour,ISelectableItem
 {
-    public event Action OnEaten = null;
+    public event Action OnEaten = null, OnGrowing = null;
     public event Action<Bush> OnSelected = null;
 
     [SerializeField] int bitesToEat = 0;
@@ -91,6 +91,7 @@ public class Bush : MonoBehaviour,ISelectableItem
                 yield return null;
             }
             bitesLeft += 1;
+            OnGrowing?.Invoke();
         }        
     }
 
