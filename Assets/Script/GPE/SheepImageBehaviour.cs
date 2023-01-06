@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
+public class SheepImageBehaviour : MonoBehaviour
 {
     public event Action<SheepImageBehaviour> OnSheepEat = null;
     public event Action<SheepImageBehaviour> OnStartSheepEat = null;
@@ -17,33 +17,23 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     [SerializeField] float eatingTimer = 2.5f;
     [SerializeField, Range(1.1f, 5f)] float scalingFactor = 1.5f;
     float timeSpentEating = 0f;
-    
+
+    public bool IsMoving => target || returnToInit;
 
     Vector3 initialPosition = Vector3.zero;
     public Vector3 TargetPosition => target.transform.position;
 
     private void Start()
     {
-        Initialize();
+        gameObject.SetActive(false);
     }
     private void LateUpdate()
     {
-        return;
         MoveToFood();
         ReturnToInitialPos();
         LookAtDestination();
         CheckEatingProgress();
     }
-    private void OnDestroy()
-    {
-        Unregister();
-    }
-    private void Initialize()
-    {
-        Register();
-        gameObject.SetActive(false);
-    }
-
     void StartEating()
     {
         OnStartSheepEat?.Invoke(this);
@@ -68,7 +58,7 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
     }
     public void SetTarget(BushImageBehaviour _target, Vector3 imagePosition)
     {
-        if (target || returnToInit || _target.IsGrowing)
+        if (target || returnToInit || _target.IsGrowing || !_target.isActiveAndEnabled)
             return;
         target = _target;
         _target.SetIsTargetBySheep(true);
@@ -87,14 +77,6 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, Time.deltaTime * rotationSpeed);
         isRotating = Vector3.Distance(transform.eulerAngles, _targetRotation.eulerAngles) > 0.1f;
     }
-    public void Register()
-    {
-        SheepImageManager.Instance.AddEntity(this);
-    }
-    public void Unregister()
-    {
-        SheepImageManager.Instance.RemoveEntity(this);
-    }
     IEnumerator EatingAfterTimer()
     {
         yield return new WaitForSeconds(eatingTimer);
@@ -106,7 +88,6 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
         returnToInit = true;
         eating = false;
     }
-
     void CheckEatingProgress()
     {
         if (!eating)
@@ -131,5 +112,10 @@ public class SheepImageBehaviour : MonoBehaviour, IManagedEntity
             _scale /= 2;
         }
         target.Mesh.transform.localScale = _scale;
+    }
+    public void ResetTarget()
+    {
+        target.SetIsTargetBySheep(false);
+        target = null;
     }
 }

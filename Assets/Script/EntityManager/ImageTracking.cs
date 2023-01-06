@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -13,23 +14,26 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
     [SerializeField] LineRenderer lineRenderer = null;
     //prefabs
     [SerializeField] List<GameObject> objects = new List<GameObject>();
-    [SerializeField] GameObject sheep;
-
+    //sheep
+    [SerializeField] SheepImageBehaviour sheep;
     //bush
     [SerializeField] BushImageBehaviour bush = null;
-    bool setBush = false;
 
-    void Start()
+    private void Start()
     {
-        imageManager.trackedImagesChanged += UpdateImages;
-
+        StartCoroutine(SpawnEntities());
     }
     void OnDestroy()
     {
+        if (!imageManager)
+            return;
+
         imageManager.trackedImagesChanged -= UpdateImages;
+        Destroy(imageManager);
     }
     void UpdateImages(ARTrackedImagesChangedEventArgs obj)
     {
+
         #region test
         /*        foreach (ARTrackedImage image in obj.added)
                 {
@@ -44,29 +48,16 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
                         }
                     }
                 }*/
+        /*        foreach (ARTrackedImage image in obj.added)
+                {
+                    image.destroyOnRemoval = true;
+                }*/
         #endregion
-        /* foreach (ARTrackedImage image in obj.added)
-         {
-             Debug.Log("ADD");
-             for (int i = 0; i < imageLibrary.count; i++)
-             {
-                 Debug.Log("it " + i);
-                 if (image.referenceImage.name.Equals(imageLibrary[i].name))
-                 {
-                     GameObject _object = Instantiate(objects[i], image.transform);
-                     Debug.Log("Spawn/Move Object");
-                     if (i == 0)
-                         bush = _object.GetComponent<BushImageBehaviour>();
-                 }
-             }
-         }*/
         foreach (ARTrackedImage image in obj.updated)
         {
-            //   Debug.Log("Updated :" + image.referenceImage.name);
             for (int i = 0; i < imageLibrary.count; i++)
             {
-
-                if (image.referenceImage.name.Equals(imageLibrary[i].name))
+                if (image.referenceImage.name.Equals(imageLibrary[i].name) && image.trackingState == TrackingState.Tracking)
                 {
                     if (i == 0)
                     {
@@ -77,16 +68,10 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
                     {
                         sheep.gameObject.SetActive(true);
                         sheep.transform.SetPositionAndRotation(image.transform.position, image.transform.rotation);
+                        sheep.ResetTarget();
                     }
-                    /*if (!bush)
-                    {
-                        GameObject _object = Instantiate(objects[i], image.transform);
-                        if (i == 0)
-                            bush = _object.GetComponent<BushImageBehaviour>();
-                    }*/
                 }
             }
-
             #region commentaire
             /*if (image.referenceImage.name.Equals(imageLibrary[i].name))
              {
@@ -101,19 +86,6 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
             #endregion
             if (bush)
                 CheckDistance(image);
-
-        }
-
-        foreach (ARTrackedImage image in obj.removed)
-        {
-            if (image.referenceImage.name.Equals(imageLibrary[0].name))
-            {
-                // Destroy(bush);
-            }
-            else if (image.referenceImage.name.Equals(imageLibrary[1].name))
-            {
-                //  Destroy(SheepImageManager.Instance.GetFirstSheep());
-            }
         }
     }
     void CheckDistance(ARTrackedImage _image)
@@ -123,22 +95,33 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
         {
             if (!bush.IsTargettedBySheep)
             {
-                SheepImageBehaviour _sheep = SheepImageManager.Instance.GetFirstSheep();
-                if (!_sheep || !bush)
+                if (!sheep || !bush)
                     return;
 
-                float distance = Vector3.Distance(_sheep.transform.position, bush.transform.position);
+                float distance = Vector3.Distance(sheep.transform.position, bush.transform.position);
                 bool isAtDistance = distance < 0.5f;
-                OnCheckDistance?.Invoke(distance, bush.transform, _sheep.transform);
+                OnCheckDistance?.Invoke(distance, bush.transform, sheep.transform);
                 if (!isAtDistance)
                     return;
-                _sheep.SetTarget(bush, _image.transform.position);
+                sheep.SetTarget(bush, _image.transform.position);
             }
         }
     }
+    public void Initialize(ARTrackedImageManager _newImageTracker)
+    {
+        imageManager = _newImageTracker;
+        imageManager.trackedImagesChanged += UpdateImages;
+    }
+    IEnumerator SpawnEntities()
+    {
+        yield return new WaitForSeconds(1);
+
+        bush = Instantiate(objects[0]).GetComponent<BushImageBehaviour>();
+        sheep = Instantiate(objects[1]).GetComponent<SheepImageBehaviour>();
+    }
     private void OnGUI()
     {
-        GUILayout.Box($"Sheep {(SheepImageManager.Instance.GetFirstSheep() == null ? "null" : "valid")}");
+        GUILayout.Box($"Sheep {(sheep == null ? "null" : "valid")}");
         GUILayout.Box($"Bush {(bush == null ? "null" : "valid")}");
     }
 }

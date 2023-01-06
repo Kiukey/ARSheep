@@ -6,8 +6,6 @@ public class LineRendererManager : MonoBehaviour
 {
     [SerializeField] LineRenderer lineRenderer = null;
     [SerializeField] bool lerpColor = true;
-    //[SerializeField] float debugDistance = 0;
-    //[SerializeField] Transform testOne, testTwo;
 
     private void Start()
     {
@@ -15,17 +13,11 @@ public class LineRendererManager : MonoBehaviour
         InitializeLineRenderer();
     }
 
-    private void Update()
-    {
-        //UpdateLine(debugDistance, testOne, testTwo);
-    }
     void UpdateLine(float _distance,Transform _from, Transform _to)
     {
-        if (!lineRenderer)
+        if (!lineRenderer|| !_from.gameObject.activeInHierarchy || !_to.gameObject.activeInHierarchy)
             return;
 
-        /*Vector3[] _positionArray = new Vector3[] { testOne.position, testTwo.position };
-        float distance = Vector3.Distance(testOne.position, testTwo.position);*/
         Vector3[] _positionArray = new Vector3[] {_from.position, _to.position };
         lineRenderer.SetPositions(_positionArray);
         
