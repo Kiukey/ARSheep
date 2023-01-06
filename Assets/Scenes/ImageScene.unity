@@ -384,6 +384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 1519959686}
   lerpColor: 0
+  definition: 25
+  height: 0.1
+  points: []
 --- !u!120 &1519959686
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -404,7 +407,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3baa8b32fb5eea643881f2d7a690e754, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
