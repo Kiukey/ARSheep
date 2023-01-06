@@ -22,6 +22,7 @@ public class BushImageBehaviour : MonoBehaviour
     private void Start()
     {
 		gameObject.SetActive(false);
+		mesh.transform.localScale = scaleSize;
     }
 
     private void LateUpdate()
