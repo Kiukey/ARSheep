@@ -16,7 +16,12 @@ public class BushImageBehaviour : MonoBehaviour
 	public bool IsTargettedBySheep => isTargettedBySheep;
 	public MeshRenderer Mesh => mesh;
 
-	private void LateUpdate()
+    private void Start()
+    {
+		gameObject.SetActive(false);
+    }
+
+    private void LateUpdate()
 	{
 		GrowBush();
 	}
