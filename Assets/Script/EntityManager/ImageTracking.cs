@@ -27,13 +27,11 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
     {
         if (!imageManager)
             return;
-
         imageManager.trackedImagesChanged -= UpdateImages;
         Destroy(imageManager);
     }
     void UpdateImages(ARTrackedImagesChangedEventArgs obj)
     {
-
         #region test
         /*        foreach (ARTrackedImage image in obj.added)
                 {
@@ -90,7 +88,7 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
     }
     void CheckDistance(ARTrackedImage _image)
     {
-        Debug.Log("check");
+        //Debug.Log("check");
         if (_image.referenceImage.name.Equals(imageLibrary[1].name))
         {
             if (!bush.IsTargettedBySheep)

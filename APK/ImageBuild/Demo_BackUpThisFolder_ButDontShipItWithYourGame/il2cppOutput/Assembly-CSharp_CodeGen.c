@@ -244,319 +244,349 @@ extern void ARSessionSpawner_Start_m41F5AD47699562AB18FA735DC76F8845B3524E3A (vo
 extern void ARSessionSpawner_SpawnArSession_m539699CD04F9E1DD40BE49F6B1F9577A77763E90 (void);
 // 0x00000074 System.Void ARSessionSpawner::.ctor()
 extern void ARSessionSpawner__ctor_m3E7B5995F573F7215CA4727F5BE3C4D0FB3D3224 (void);
-// 0x00000075 System.Boolean BushImageBehaviour::get_IsGrowing()
+// 0x00000075 System.Void BushImageBehaviour::add_OnGrowingBush(System.Action`1<System.Single>)
+extern void BushImageBehaviour_add_OnGrowingBush_m8D83366210295626D0BDB40C3343349B0AC0332C (void);
+// 0x00000076 System.Void BushImageBehaviour::remove_OnGrowingBush(System.Action`1<System.Single>)
+extern void BushImageBehaviour_remove_OnGrowingBush_mE7634EBCCBFDDD765E59BD5092410301DF8D8CC0 (void);
+// 0x00000077 System.Void BushImageBehaviour::add_OnStartGrowingBush(System.Action)
+extern void BushImageBehaviour_add_OnStartGrowingBush_mA803D80CA669A9F4D37AE88219F8C62888A109F8 (void);
+// 0x00000078 System.Void BushImageBehaviour::remove_OnStartGrowingBush(System.Action)
+extern void BushImageBehaviour_remove_OnStartGrowingBush_mD0BFB5DAD0352E26D0EDEEBD725C0D1012DFD906 (void);
+// 0x00000079 System.Void BushImageBehaviour::add_OnEndGrowingBush(System.Action)
+extern void BushImageBehaviour_add_OnEndGrowingBush_m5CB20CE1391B0435DDE3B913D6A7B84E369B46E8 (void);
+// 0x0000007A System.Void BushImageBehaviour::remove_OnEndGrowingBush(System.Action)
+extern void BushImageBehaviour_remove_OnEndGrowingBush_m850297D7B886E14AE263058AD97FF37F3389BB06 (void);
+// 0x0000007B System.Boolean BushImageBehaviour::get_IsGrowing()
 extern void BushImageBehaviour_get_IsGrowing_mA5BB44CEFB96E7A5B9579346545F1D22BCD268D3 (void);
-// 0x00000076 System.Boolean BushImageBehaviour::get_IsTargettedBySheep()
+// 0x0000007C System.Boolean BushImageBehaviour::get_IsTargettedBySheep()
 extern void BushImageBehaviour_get_IsTargettedBySheep_mD8DD7833DF1F0C74687B15F83F014082907766BC (void);
-// 0x00000077 UnityEngine.MeshRenderer BushImageBehaviour::get_Mesh()
+// 0x0000007D UnityEngine.MeshRenderer BushImageBehaviour::get_Mesh()
 extern void BushImageBehaviour_get_Mesh_m34DA07500F8C01E50A3B0F8959B808E95C906D7D (void);
-// 0x00000078 System.Void BushImageBehaviour::Start()
+// 0x0000007E System.Void BushImageBehaviour::Start()
 extern void BushImageBehaviour_Start_mCE21252E5A5E12E759074A5CB14CB34F091FCCDE (void);
-// 0x00000079 System.Void BushImageBehaviour::LateUpdate()
+// 0x0000007F System.Void BushImageBehaviour::LateUpdate()
 extern void BushImageBehaviour_LateUpdate_m6A2A0EA38EF697A2624642BC772384B4216C3406 (void);
-// 0x0000007A System.Void BushImageBehaviour::SetIsTargetBySheep(System.Boolean)
+// 0x00000080 System.Void BushImageBehaviour::SetIsTargetBySheep(System.Boolean)
 extern void BushImageBehaviour_SetIsTargetBySheep_mB227016E50A5F4A7DEF325EFCB46046A5C2BA9DD (void);
-// 0x0000007B System.Void BushImageBehaviour::DeActivate()
+// 0x00000081 System.Void BushImageBehaviour::DeActivate()
 extern void BushImageBehaviour_DeActivate_m324ED68F61BB479CEB782CAA57C56BB812E990CE (void);
-// 0x0000007C System.Void BushImageBehaviour::GrowBush()
+// 0x00000082 System.Void BushImageBehaviour::GrowBush()
 extern void BushImageBehaviour_GrowBush_m9689777B4B58EEB97437BA5646A0A12036A56FE0 (void);
-// 0x0000007D System.Single BushImageBehaviour::GrowingProgress(UnityEngine.Vector3)
+// 0x00000083 System.Single BushImageBehaviour::GrowingProgress(UnityEngine.Vector3)
 extern void BushImageBehaviour_GrowingProgress_mA0CC11F53D39481C499C3A9BC12B399E7B90F68B (void);
-// 0x0000007E System.Void BushImageBehaviour::.ctor()
+// 0x00000084 System.Void BushImageBehaviour::.ctor()
 extern void BushImageBehaviour__ctor_m6FBE126AB4BAFAD9FB613067832CC77474031B67 (void);
-// 0x0000007F System.Void ImageTracking::add_OnCheckDistance(System.Action`3<System.Single,UnityEngine.Transform,UnityEngine.Transform>)
+// 0x00000085 System.Void ImageTracking::add_OnCheckDistance(System.Action`3<System.Single,UnityEngine.Transform,UnityEngine.Transform>)
 extern void ImageTracking_add_OnCheckDistance_m121BA32A5F48A15AD3CAC82DD176F730FDE86093 (void);
-// 0x00000080 System.Void ImageTracking::remove_OnCheckDistance(System.Action`3<System.Single,UnityEngine.Transform,UnityEngine.Transform>)
+// 0x00000086 System.Void ImageTracking::remove_OnCheckDistance(System.Action`3<System.Single,UnityEngine.Transform,UnityEngine.Transform>)
 extern void ImageTracking_remove_OnCheckDistance_m337C3A9524DA6B3402AAF93C782373D076FC8883 (void);
-// 0x00000081 System.Void ImageTracking::Start()
+// 0x00000087 System.Void ImageTracking::Start()
 extern void ImageTracking_Start_m69798125C8053F64CE387194226F7AB27B6DA97C (void);
-// 0x00000082 System.Void ImageTracking::OnDestroy()
+// 0x00000088 System.Void ImageTracking::OnDestroy()
 extern void ImageTracking_OnDestroy_m910A4D546BC08FB1F68E27C1FDE0D2011E789F11 (void);
-// 0x00000083 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
+// 0x00000089 System.Void ImageTracking::UpdateImages(UnityEngine.XR.ARFoundation.ARTrackedImagesChangedEventArgs)
 extern void ImageTracking_UpdateImages_mADEC36F6505AD0A7E2C73F4004E897A209109CAE (void);
-// 0x00000084 System.Void ImageTracking::CheckDistance(UnityEngine.XR.ARFoundation.ARTrackedImage)
+// 0x0000008A System.Void ImageTracking::CheckDistance(UnityEngine.XR.ARFoundation.ARTrackedImage)
 extern void ImageTracking_CheckDistance_m4C2044088A0B835D2190B7EE51CD5D0058FEBFCA (void);
-// 0x00000085 System.Void ImageTracking::Initialize(UnityEngine.XR.ARFoundation.ARTrackedImageManager)
+// 0x0000008B System.Void ImageTracking::Initialize(UnityEngine.XR.ARFoundation.ARTrackedImageManager)
 extern void ImageTracking_Initialize_m4741C56F15C9D9DC6108B4F44BC1708C4F0707E3 (void);
-// 0x00000086 System.Collections.IEnumerator ImageTracking::SpawnEntities()
+// 0x0000008C System.Collections.IEnumerator ImageTracking::SpawnEntities()
 extern void ImageTracking_SpawnEntities_m9876AE15C48DAB131852BBE74D436BB2D32DF458 (void);
-// 0x00000087 System.Void ImageTracking::OnGUI()
+// 0x0000008D System.Void ImageTracking::OnGUI()
 extern void ImageTracking_OnGUI_m87485A1C2E763C1E05095A3E57AD03D4E8F6AA25 (void);
-// 0x00000088 System.Void ImageTracking::.ctor()
+// 0x0000008E System.Void ImageTracking::.ctor()
 extern void ImageTracking__ctor_m88C12006AC3BAED3DAA4F0E0544DAA5294D96A5A (void);
-// 0x00000089 System.Void ImageTracking/<SpawnEntities>d__14::.ctor(System.Int32)
+// 0x0000008F System.Void ImageTracking/<SpawnEntities>d__14::.ctor(System.Int32)
 extern void U3CSpawnEntitiesU3Ed__14__ctor_m1BB1BE30FB3E581240A9E014B5903C5061AF8FF0 (void);
-// 0x0000008A System.Void ImageTracking/<SpawnEntities>d__14::System.IDisposable.Dispose()
+// 0x00000090 System.Void ImageTracking/<SpawnEntities>d__14::System.IDisposable.Dispose()
 extern void U3CSpawnEntitiesU3Ed__14_System_IDisposable_Dispose_mD969B734493D980421C2E72289DA4A9818B91314 (void);
-// 0x0000008B System.Boolean ImageTracking/<SpawnEntities>d__14::MoveNext()
+// 0x00000091 System.Boolean ImageTracking/<SpawnEntities>d__14::MoveNext()
 extern void U3CSpawnEntitiesU3Ed__14_MoveNext_mA26EE35B21E5CB0C40C145A35BD8DBB78685342A (void);
-// 0x0000008C System.Object ImageTracking/<SpawnEntities>d__14::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000092 System.Object ImageTracking/<SpawnEntities>d__14::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSpawnEntitiesU3Ed__14_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m651A11AFF8112232ABE735073CE3AF90560F4C4D (void);
-// 0x0000008D System.Void ImageTracking/<SpawnEntities>d__14::System.Collections.IEnumerator.Reset()
+// 0x00000093 System.Void ImageTracking/<SpawnEntities>d__14::System.Collections.IEnumerator.Reset()
 extern void U3CSpawnEntitiesU3Ed__14_System_Collections_IEnumerator_Reset_mA715D44513ED8299FB10C3B0DEEA08A8EB39BFF1 (void);
-// 0x0000008E System.Object ImageTracking/<SpawnEntities>d__14::System.Collections.IEnumerator.get_Current()
+// 0x00000094 System.Object ImageTracking/<SpawnEntities>d__14::System.Collections.IEnumerator.get_Current()
 extern void U3CSpawnEntitiesU3Ed__14_System_Collections_IEnumerator_get_Current_mD798EA97BC360636A9A865BBAE279CFE2A91F932 (void);
-// 0x0000008F System.Void IManagedEntity::Register()
-// 0x00000090 System.Void IManagedEntity::Unregister()
-// 0x00000091 System.Void SheepImageManager::AddEntity(SheepImageBehaviour)
+// 0x00000095 System.Void IManagedEntity::Register()
+// 0x00000096 System.Void IManagedEntity::Unregister()
+// 0x00000097 System.Void SheepImageManager::AddEntity(SheepImageBehaviour)
 extern void SheepImageManager_AddEntity_m4E9F7BB4CB7AC80BD583A94973F0FEF819346346 (void);
-// 0x00000092 System.Void SheepImageManager::RemoveEntity(SheepImageBehaviour)
+// 0x00000098 System.Void SheepImageManager::RemoveEntity(SheepImageBehaviour)
 extern void SheepImageManager_RemoveEntity_m502229C2D006D32722E4DFD86F1E020B08A0C586 (void);
-// 0x00000093 System.Void SheepImageManager::RemoveAt(System.Int32)
+// 0x00000099 System.Void SheepImageManager::RemoveAt(System.Int32)
 extern void SheepImageManager_RemoveAt_mA9390E592C3E922E836864A02EAC3C052BDA62AC (void);
-// 0x00000094 SheepImageBehaviour SheepImageManager::GetFirstSheep()
+// 0x0000009A SheepImageBehaviour SheepImageManager::GetFirstSheep()
 extern void SheepImageManager_GetFirstSheep_m425FA4A77F3EB6198C57788CB31451E21A4F2808 (void);
-// 0x00000095 System.Void SheepImageManager::.ctor()
+// 0x0000009B System.Void SheepImageManager::.ctor()
 extern void SheepImageManager__ctor_m3C0C915E567E069C2857A4541AB60A58BEF50A03 (void);
-// 0x00000096 System.Void SheepImageBehaviour::add_OnSheepEat(System.Action`1<SheepImageBehaviour>)
+// 0x0000009C System.Void SheepImageBehaviour::add_OnSheepEat(System.Action`1<SheepImageBehaviour>)
 extern void SheepImageBehaviour_add_OnSheepEat_mD0AB29388756106859D068275A963FD5C167297F (void);
-// 0x00000097 System.Void SheepImageBehaviour::remove_OnSheepEat(System.Action`1<SheepImageBehaviour>)
+// 0x0000009D System.Void SheepImageBehaviour::remove_OnSheepEat(System.Action`1<SheepImageBehaviour>)
 extern void SheepImageBehaviour_remove_OnSheepEat_m4E066E6610AB2B12FA0A2C50060BFB9AAB99416E (void);
-// 0x00000098 System.Void SheepImageBehaviour::add_OnStartSheepEat(System.Action`1<SheepImageBehaviour>)
+// 0x0000009E System.Void SheepImageBehaviour::add_OnStartSheepEat(System.Action`1<SheepImageBehaviour>)
 extern void SheepImageBehaviour_add_OnStartSheepEat_m2DCD1EA078F7E60E35FDDD3293CADF9D4F566838 (void);
-// 0x00000099 System.Void SheepImageBehaviour::remove_OnStartSheepEat(System.Action`1<SheepImageBehaviour>)
+// 0x0000009F System.Void SheepImageBehaviour::remove_OnStartSheepEat(System.Action`1<SheepImageBehaviour>)
 extern void SheepImageBehaviour_remove_OnStartSheepEat_m20940D514F9A815F2B3955EBEDEDE9EDF42B7F7A (void);
-// 0x0000009A System.Boolean SheepImageBehaviour::get_IsMoving()
+// 0x000000A0 System.Boolean SheepImageBehaviour::get_IsMoving()
 extern void SheepImageBehaviour_get_IsMoving_m316BCC59449050D356B23B051882120A4E02F7AD (void);
-// 0x0000009B UnityEngine.Vector3 SheepImageBehaviour::get_TargetPosition()
+// 0x000000A1 UnityEngine.Vector3 SheepImageBehaviour::get_TargetPosition()
 extern void SheepImageBehaviour_get_TargetPosition_m3844907A72CF7A486D72D7FFD2D0DA9E53AC3DFA (void);
-// 0x0000009C System.Void SheepImageBehaviour::Start()
+// 0x000000A2 System.Void SheepImageBehaviour::Start()
 extern void SheepImageBehaviour_Start_mCD78D24D328A7890E7C37516D4EB298D57796D9D (void);
-// 0x0000009D System.Void SheepImageBehaviour::LateUpdate()
+// 0x000000A3 System.Void SheepImageBehaviour::LateUpdate()
 extern void SheepImageBehaviour_LateUpdate_mE7636FDE42B0EBBFC05FC0B61938CA1D80E0E56E (void);
-// 0x0000009E System.Void SheepImageBehaviour::StartEating()
+// 0x000000A4 System.Void SheepImageBehaviour::StartEating()
 extern void SheepImageBehaviour_StartEating_m6BD6C0007985171E47EA5A328B800D899F8B436F (void);
-// 0x0000009F System.Void SheepImageBehaviour::MoveToFood()
+// 0x000000A5 System.Void SheepImageBehaviour::MoveToFood()
 extern void SheepImageBehaviour_MoveToFood_m65E1E1B8298C79FA002F313C859F895BF0959E04 (void);
-// 0x000000A0 System.Void SheepImageBehaviour::ReturnToInitialPos()
+// 0x000000A6 System.Void SheepImageBehaviour::ReturnToInitialPos()
 extern void SheepImageBehaviour_ReturnToInitialPos_mA7C64B798B9D958F68E55C24FC40E0E95F44D403 (void);
-// 0x000000A1 System.Void SheepImageBehaviour::SetTarget(BushImageBehaviour,UnityEngine.Vector3)
+// 0x000000A7 System.Void SheepImageBehaviour::SetTarget(BushImageBehaviour,UnityEngine.Vector3)
 extern void SheepImageBehaviour_SetTarget_m8F13DF04DB72EAFB44840D738EBC382579948BB9 (void);
-// 0x000000A2 System.Void SheepImageBehaviour::LookAtDestination()
+// 0x000000A8 System.Void SheepImageBehaviour::LookAtDestination()
 extern void SheepImageBehaviour_LookAtDestination_m91329773AF76957698C9EEDB4691FCC053DC35CA (void);
-// 0x000000A3 System.Collections.IEnumerator SheepImageBehaviour::EatingAfterTimer()
+// 0x000000A9 System.Collections.IEnumerator SheepImageBehaviour::EatingAfterTimer()
 extern void SheepImageBehaviour_EatingAfterTimer_m5217BA1452BD043AFB5050E3F947658AF87E898F (void);
-// 0x000000A4 System.Void SheepImageBehaviour::CheckEatingProgress()
+// 0x000000AA System.Void SheepImageBehaviour::CheckEatingProgress()
 extern void SheepImageBehaviour_CheckEatingProgress_mA2D9BEEBA20DB289E9D6F85F3FB68CA4B091B4B5 (void);
-// 0x000000A5 System.Void SheepImageBehaviour::ResetTarget()
+// 0x000000AB System.Void SheepImageBehaviour::ResetTarget()
 extern void SheepImageBehaviour_ResetTarget_m420544C0431C271F72555DAFC5AB763E4A00D6AB (void);
-// 0x000000A6 System.Void SheepImageBehaviour::.ctor()
+// 0x000000AC System.Void SheepImageBehaviour::.ctor()
 extern void SheepImageBehaviour__ctor_m7CB0513837758DA2B7F10C82FB4A1E5EDDC9868E (void);
-// 0x000000A7 System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::.ctor(System.Int32)
+// 0x000000AD System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::.ctor(System.Int32)
 extern void U3CEatingAfterTimerU3Ed__30__ctor_m0D0D762DF052B4C139A17C931EBB5899CBECBD10 (void);
-// 0x000000A8 System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::System.IDisposable.Dispose()
+// 0x000000AE System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::System.IDisposable.Dispose()
 extern void U3CEatingAfterTimerU3Ed__30_System_IDisposable_Dispose_mD9E2F9CAF380095D694B6FFC6C46A4B82F25EE0B (void);
-// 0x000000A9 System.Boolean SheepImageBehaviour/<EatingAfterTimer>d__30::MoveNext()
+// 0x000000AF System.Boolean SheepImageBehaviour/<EatingAfterTimer>d__30::MoveNext()
 extern void U3CEatingAfterTimerU3Ed__30_MoveNext_m1E9FE72E7EB4845C9FF242B823C828BC39398651 (void);
-// 0x000000AA System.Object SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000B0 System.Object SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CEatingAfterTimerU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7969A3026E9B4821468591F413EEA57B89E6733D (void);
-// 0x000000AB System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.IEnumerator.Reset()
+// 0x000000B1 System.Void SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.IEnumerator.Reset()
 extern void U3CEatingAfterTimerU3Ed__30_System_Collections_IEnumerator_Reset_m0791FD23A7AEE99A580665EC7C3FDA2662633CEF (void);
-// 0x000000AC System.Object SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.IEnumerator.get_Current()
+// 0x000000B2 System.Object SheepImageBehaviour/<EatingAfterTimer>d__30::System.Collections.IEnumerator.get_Current()
 extern void U3CEatingAfterTimerU3Ed__30_System_Collections_IEnumerator_get_Current_m0A56CE712518B6A5B7560AED92545A0E1D52E2B4 (void);
-// 0x000000AD System.Void SheepPlaneBehaviour::add_OnStartSelect(System.Action)
+// 0x000000B3 System.Void SheepPlaneBehaviour::add_OnStartSelect(System.Action)
 extern void SheepPlaneBehaviour_add_OnStartSelect_mDAD9B1F14E319D91BA6426A5A0AFFC19EBE5C9A2 (void);
-// 0x000000AE System.Void SheepPlaneBehaviour::remove_OnStartSelect(System.Action)
+// 0x000000B4 System.Void SheepPlaneBehaviour::remove_OnStartSelect(System.Action)
 extern void SheepPlaneBehaviour_remove_OnStartSelect_m50CB02FC98DC36EC4EC784E94D4BA710597B4038 (void);
-// 0x000000AF System.Void SheepPlaneBehaviour::add_OnEndSelect(System.Action)
+// 0x000000B5 System.Void SheepPlaneBehaviour::add_OnEndSelect(System.Action)
 extern void SheepPlaneBehaviour_add_OnEndSelect_m3DA8506BB02E8315E0A7ADC80FC9474D0EB7F3BE (void);
-// 0x000000B0 System.Void SheepPlaneBehaviour::remove_OnEndSelect(System.Action)
+// 0x000000B6 System.Void SheepPlaneBehaviour::remove_OnEndSelect(System.Action)
 extern void SheepPlaneBehaviour_remove_OnEndSelect_mDEA89E959CD9BF3513F9F3A8B36E2FA96B69F154 (void);
-// 0x000000B1 System.Void SheepPlaneBehaviour::add_OnStartMoveToEat(System.Action)
+// 0x000000B7 System.Void SheepPlaneBehaviour::add_OnStartMoveToEat(System.Action)
 extern void SheepPlaneBehaviour_add_OnStartMoveToEat_mC95CA69CC69DF2951167F0D068B436A53785DB6C (void);
-// 0x000000B2 System.Void SheepPlaneBehaviour::remove_OnStartMoveToEat(System.Action)
+// 0x000000B8 System.Void SheepPlaneBehaviour::remove_OnStartMoveToEat(System.Action)
 extern void SheepPlaneBehaviour_remove_OnStartMoveToEat_mE22F76987D7BCD6AFC94B6907E071A0891992BB4 (void);
-// 0x000000B3 System.Void SheepPlaneBehaviour::add_OnEndMoveToEat(System.Action)
+// 0x000000B9 System.Void SheepPlaneBehaviour::add_OnEndMoveToEat(System.Action)
 extern void SheepPlaneBehaviour_add_OnEndMoveToEat_mBCFCDCD3A1E186ECB0CD426A5F9D05F773A41436 (void);
-// 0x000000B4 System.Void SheepPlaneBehaviour::remove_OnEndMoveToEat(System.Action)
+// 0x000000BA System.Void SheepPlaneBehaviour::remove_OnEndMoveToEat(System.Action)
 extern void SheepPlaneBehaviour_remove_OnEndMoveToEat_mA5E1C21FF133CA5D183095D375C60F926EDB9921 (void);
-// 0x000000B5 System.Void SheepPlaneBehaviour::add_OnEndEating(System.Action)
+// 0x000000BB System.Void SheepPlaneBehaviour::add_OnEndEating(System.Action)
 extern void SheepPlaneBehaviour_add_OnEndEating_m2F3B6E186D78B5D3379CDB482B79626391D819DD (void);
-// 0x000000B6 System.Void SheepPlaneBehaviour::remove_OnEndEating(System.Action)
+// 0x000000BC System.Void SheepPlaneBehaviour::remove_OnEndEating(System.Action)
 extern void SheepPlaneBehaviour_remove_OnEndEating_m1E2AE2FB50708B3ED67C7962AFF14C9297E13083 (void);
-// 0x000000B7 System.Void SheepPlaneBehaviour::add_OnBite(System.Action)
+// 0x000000BD System.Void SheepPlaneBehaviour::add_OnBite(System.Action)
 extern void SheepPlaneBehaviour_add_OnBite_mCDB864722153683195D6F114DB2151581FC606D3 (void);
-// 0x000000B8 System.Void SheepPlaneBehaviour::remove_OnBite(System.Action)
+// 0x000000BE System.Void SheepPlaneBehaviour::remove_OnBite(System.Action)
 extern void SheepPlaneBehaviour_remove_OnBite_m57201DC1A81FE31D1405B239DEF7FE3D7C1509B9 (void);
-// 0x000000B9 System.Void SheepPlaneBehaviour::add_OnStartEating(System.Action`1<Bush>)
+// 0x000000BF System.Void SheepPlaneBehaviour::add_OnStartEating(System.Action`1<Bush>)
 extern void SheepPlaneBehaviour_add_OnStartEating_m179DA6F1B46BA3A8824E04F897DE4C4EC3CC0656 (void);
-// 0x000000BA System.Void SheepPlaneBehaviour::remove_OnStartEating(System.Action`1<Bush>)
+// 0x000000C0 System.Void SheepPlaneBehaviour::remove_OnStartEating(System.Action`1<Bush>)
 extern void SheepPlaneBehaviour_remove_OnStartEating_m40647D9E0ED0D1098EBCF71B1A8CE5BD1EF06179 (void);
-// 0x000000BB System.Boolean SheepPlaneBehaviour::get_CanSelectBush()
+// 0x000000C1 System.Boolean SheepPlaneBehaviour::get_CanSelectBush()
 extern void SheepPlaneBehaviour_get_CanSelectBush_m67B7E9210784C64F065882EF435974EF90831705 (void);
-// 0x000000BC Bush SheepPlaneBehaviour::get_TargetBush()
+// 0x000000C2 Bush SheepPlaneBehaviour::get_TargetBush()
 extern void SheepPlaneBehaviour_get_TargetBush_m4325BF2C9A2E84A66C66EAE835665FD517B028B6 (void);
-// 0x000000BD UnityEngine.Vector3 SheepPlaneBehaviour::get_CurrentPosition()
+// 0x000000C3 UnityEngine.Vector3 SheepPlaneBehaviour::get_CurrentPosition()
 extern void SheepPlaneBehaviour_get_CurrentPosition_m24C6B337D466B0D5D98630C33658293BE11841DC (void);
-// 0x000000BE UnityEngine.Quaternion SheepPlaneBehaviour::get_CurrentRotation()
+// 0x000000C4 UnityEngine.Quaternion SheepPlaneBehaviour::get_CurrentRotation()
 extern void SheepPlaneBehaviour_get_CurrentRotation_m1588D47289A3B9DBB2449814DB6C380D6A9D8B2C (void);
-// 0x000000BF System.Boolean SheepPlaneBehaviour::get_EnableExploration()
+// 0x000000C5 System.Boolean SheepPlaneBehaviour::get_EnableExploration()
 extern void SheepPlaneBehaviour_get_EnableExploration_m9729E5BC1CEA428AE8E1C44D087125DAC9D027D2 (void);
-// 0x000000C0 System.Void SheepPlaneBehaviour::set_EnableExploration(System.Boolean)
+// 0x000000C6 System.Void SheepPlaneBehaviour::set_EnableExploration(System.Boolean)
 extern void SheepPlaneBehaviour_set_EnableExploration_mB53D0138E54E915C664B9D1E2B5705C0EAF4D704 (void);
-// 0x000000C1 System.Single SheepPlaneBehaviour::get_NBite()
+// 0x000000C7 System.Single SheepPlaneBehaviour::get_NBite()
 extern void SheepPlaneBehaviour_get_NBite_m105836DE3BCF6A4AAF959305200F1F6C35925FFF (void);
-// 0x000000C2 System.Single SheepPlaneBehaviour::get_BiteSpeed()
+// 0x000000C8 System.Single SheepPlaneBehaviour::get_BiteSpeed()
 extern void SheepPlaneBehaviour_get_BiteSpeed_m48A70635BFD44F55844A8A12457D9AC5713E5F58 (void);
-// 0x000000C3 System.Single SheepPlaneBehaviour::get_Range()
+// 0x000000C9 System.Single SheepPlaneBehaviour::get_Range()
 extern void SheepPlaneBehaviour_get_Range_mF9A77CB0C7EB9591EE9C8E99EC2150A9D4FEB633 (void);
-// 0x000000C4 System.Void SheepPlaneBehaviour::set_Range(System.Single)
+// 0x000000CA System.Void SheepPlaneBehaviour::set_Range(System.Single)
 extern void SheepPlaneBehaviour_set_Range_m2D5F4093E976F49DA9AA5D255C8CA74B3C50BEB6 (void);
-// 0x000000C5 System.Void SheepPlaneBehaviour::Start()
+// 0x000000CB System.Void SheepPlaneBehaviour::Start()
 extern void SheepPlaneBehaviour_Start_m595141F3166CE146166383F55246E57FE7CDC874 (void);
-// 0x000000C6 System.Void SheepPlaneBehaviour::Init()
+// 0x000000CC System.Void SheepPlaneBehaviour::Init()
 extern void SheepPlaneBehaviour_Init_m8DB2A163E6B08177211CB974E577D164246E5A14 (void);
-// 0x000000C7 System.Void SheepPlaneBehaviour::Update()
+// 0x000000CD System.Void SheepPlaneBehaviour::Update()
 extern void SheepPlaneBehaviour_Update_m4AF781E8B5B4B5832BA7A808FB4DD54B1C9318FA (void);
-// 0x000000C8 System.Void SheepPlaneBehaviour::ExplorationBehaviour()
+// 0x000000CE System.Void SheepPlaneBehaviour::ExplorationBehaviour()
 extern void SheepPlaneBehaviour_ExplorationBehaviour_m864D264C4A0558B557A5A246F6DFA7F1C9FB101C (void);
-// 0x000000C9 System.Boolean SheepPlaneBehaviour::IsAtTarget(System.Single)
+// 0x000000CF System.Boolean SheepPlaneBehaviour::IsAtTarget(System.Single)
 extern void SheepPlaneBehaviour_IsAtTarget_m3B7F5FD657DE19ECE83C675BD145343AB99F0FC7 (void);
-// 0x000000CA System.Void SheepPlaneBehaviour::GenerateRandomTargetFromSpawn()
+// 0x000000D0 System.Void SheepPlaneBehaviour::GenerateRandomTargetFromSpawn()
 extern void SheepPlaneBehaviour_GenerateRandomTargetFromSpawn_m29ABD6C9E8ADC552F4A12301F63B9DDDD4F1CF60 (void);
-// 0x000000CB System.Void SheepPlaneBehaviour::MoveToTarget()
+// 0x000000D1 System.Void SheepPlaneBehaviour::MoveToTarget()
 extern void SheepPlaneBehaviour_MoveToTarget_m0C2597C1BFB50ABC4BA6C7A6A196BE50A94B20B3 (void);
-// 0x000000CC System.Boolean SheepPlaneBehaviour::RotateTowards()
+// 0x000000D2 System.Boolean SheepPlaneBehaviour::RotateTowards()
 extern void SheepPlaneBehaviour_RotateTowards_mC84FDC572B29E954D5CF7AD00896F9899CD3EFAB (void);
-// 0x000000CD System.Void SheepPlaneBehaviour::InteractionBehaviour(UnityEngine.GameObject,UnityEngine.RaycastHit)
+// 0x000000D3 System.Void SheepPlaneBehaviour::InteractionBehaviour(UnityEngine.GameObject,UnityEngine.RaycastHit)
 extern void SheepPlaneBehaviour_InteractionBehaviour_m6659AF84173CCD3E7B0A952F1C1A3F660912C540 (void);
-// 0x000000CE System.Void SheepPlaneBehaviour::SelectBush(UnityEngine.GameObject,UnityEngine.RaycastHit)
+// 0x000000D4 System.Void SheepPlaneBehaviour::SelectBush(UnityEngine.GameObject,UnityEngine.RaycastHit)
 extern void SheepPlaneBehaviour_SelectBush_mAF551E9298C35E01073462AAC412AE7339CD0DB3 (void);
-// 0x000000CF System.Void SheepPlaneBehaviour::HandleSafeSelect(Bush)
+// 0x000000D5 System.Void SheepPlaneBehaviour::HandleSafeSelect(Bush)
 extern void SheepPlaneBehaviour_HandleSafeSelect_m413038F1F629C36AF0852415FDD1D914546CCFB9 (void);
-// 0x000000D0 System.Boolean SheepPlaneBehaviour::IsBush(UnityEngine.GameObject)
+// 0x000000D6 System.Boolean SheepPlaneBehaviour::IsBush(UnityEngine.GameObject)
 extern void SheepPlaneBehaviour_IsBush_m1FC8EDAC3D0C4ED589A6968C777462089083E13B (void);
-// 0x000000D1 System.Void SheepPlaneBehaviour::EndSelection()
+// 0x000000D7 System.Void SheepPlaneBehaviour::EndSelection()
 extern void SheepPlaneBehaviour_EndSelection_m537BE568F0DFFA4649FF5B746BFFC960DAFF959B (void);
-// 0x000000D2 System.Boolean SheepPlaneBehaviour::IsStartEating()
+// 0x000000D8 System.Boolean SheepPlaneBehaviour::IsStartEating()
 extern void SheepPlaneBehaviour_IsStartEating_mF1AC760A852926110E36568F0A077939CB8D4122 (void);
-// 0x000000D3 System.Void SheepPlaneBehaviour::SheepAndBushBehaviour()
+// 0x000000D9 System.Void SheepPlaneBehaviour::SheepAndBushBehaviour()
 extern void SheepPlaneBehaviour_SheepAndBushBehaviour_mD427259BD50CF1FFA142CE8ACA1F3DB398E49022 (void);
-// 0x000000D4 System.Collections.IEnumerator SheepPlaneBehaviour::EatBushBehaviour()
+// 0x000000DA System.Collections.IEnumerator SheepPlaneBehaviour::EatBushBehaviour()
 extern void SheepPlaneBehaviour_EatBushBehaviour_m66D5AE276F8B4FD910562F897AB5AE5F5DC137AB (void);
-// 0x000000D5 System.Void SheepPlaneBehaviour::HandleOnEaten()
+// 0x000000DB System.Void SheepPlaneBehaviour::HandleOnEaten()
 extern void SheepPlaneBehaviour_HandleOnEaten_m3D88F42866BBDC5D4785E080361A53D2A562328D (void);
-// 0x000000D6 System.Collections.IEnumerable SheepPlaneBehaviour::BiteBehaviour()
+// 0x000000DC System.Collections.IEnumerable SheepPlaneBehaviour::BiteBehaviour()
 extern void SheepPlaneBehaviour_BiteBehaviour_m1958D64C72940DAA69153C341567F83E976ECB62 (void);
-// 0x000000D7 System.Void SheepPlaneBehaviour::ReturnToSpawn()
+// 0x000000DD System.Void SheepPlaneBehaviour::ReturnToSpawn()
 extern void SheepPlaneBehaviour_ReturnToSpawn_m67536F8E6C271266423C0819A75D1CCDAB4EE5CF (void);
-// 0x000000D8 System.Void SheepPlaneBehaviour::DestroyBush()
+// 0x000000DE System.Void SheepPlaneBehaviour::DestroyBush()
 extern void SheepPlaneBehaviour_DestroyBush_m7CCA9906925B39A103349E274CF016F522152E05 (void);
-// 0x000000D9 UnityEngine.Vector3 SheepPlaneBehaviour::GetPosition()
+// 0x000000DF UnityEngine.Vector3 SheepPlaneBehaviour::GetPosition()
 extern void SheepPlaneBehaviour_GetPosition_mE73CA8594C005BE98F1AC96C5ABE9A8466DAE6E7 (void);
-// 0x000000DA System.Void SheepPlaneBehaviour::.ctor()
+// 0x000000E0 System.Void SheepPlaneBehaviour::.ctor()
 extern void SheepPlaneBehaviour__ctor_mF2B751AE2FDD1330A3A1DE9B0C69DC9E8C1B6268 (void);
-// 0x000000DB System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::.ctor(System.Int32)
+// 0x000000E1 System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::.ctor(System.Int32)
 extern void U3CEatBushBehaviourU3Ed__68__ctor_mEF1EB12247B0E5E0DDA2025BA8B57B5E858523BB (void);
-// 0x000000DC System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.IDisposable.Dispose()
+// 0x000000E2 System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.IDisposable.Dispose()
 extern void U3CEatBushBehaviourU3Ed__68_System_IDisposable_Dispose_m48F5E021FE550ED5834010755C0DC9A2FF30BBCD (void);
-// 0x000000DD System.Boolean SheepPlaneBehaviour/<EatBushBehaviour>d__68::MoveNext()
+// 0x000000E3 System.Boolean SheepPlaneBehaviour/<EatBushBehaviour>d__68::MoveNext()
 extern void U3CEatBushBehaviourU3Ed__68_MoveNext_m59D54E1A7AD551AC71DFBC128437D4CF90504CD9 (void);
-// 0x000000DE System.Object SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000E4 System.Object SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CEatBushBehaviourU3Ed__68_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4D83892B4809DB390C0ACE58F689BCCD818609DF (void);
-// 0x000000DF System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.IEnumerator.Reset()
+// 0x000000E5 System.Void SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.IEnumerator.Reset()
 extern void U3CEatBushBehaviourU3Ed__68_System_Collections_IEnumerator_Reset_m290BBC855E35D52477455D64B2ACBE2036BFCB8B (void);
-// 0x000000E0 System.Object SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.IEnumerator.get_Current()
+// 0x000000E6 System.Object SheepPlaneBehaviour/<EatBushBehaviour>d__68::System.Collections.IEnumerator.get_Current()
 extern void U3CEatBushBehaviourU3Ed__68_System_Collections_IEnumerator_get_Current_mE59920CB722953299C5B76BCAC80DB3423DA9C8B (void);
-// 0x000000E1 System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::.ctor(System.Int32)
+// 0x000000E7 System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::.ctor(System.Int32)
 extern void U3CBiteBehaviourU3Ed__70__ctor_mFDC9D9EA00A0DF829746BD6DA11BFA487ACC2A67 (void);
-// 0x000000E2 System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::System.IDisposable.Dispose()
+// 0x000000E8 System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::System.IDisposable.Dispose()
 extern void U3CBiteBehaviourU3Ed__70_System_IDisposable_Dispose_m26FAC82D7C7A6ED88648ACD7FBD08FB37D9252B9 (void);
-// 0x000000E3 System.Boolean SheepPlaneBehaviour/<BiteBehaviour>d__70::MoveNext()
+// 0x000000E9 System.Boolean SheepPlaneBehaviour/<BiteBehaviour>d__70::MoveNext()
 extern void U3CBiteBehaviourU3Ed__70_MoveNext_m7A59A6702112E52C8E9B70E834089F040CD73EC9 (void);
-// 0x000000E4 System.Object SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000000EA System.Object SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CBiteBehaviourU3Ed__70_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mEDD34B43930A5C14ECAC4E20F68041258651E89E (void);
-// 0x000000E5 System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerator.Reset()
+// 0x000000EB System.Void SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerator.Reset()
 extern void U3CBiteBehaviourU3Ed__70_System_Collections_IEnumerator_Reset_m774F940BC9D68BF60F336F16C295C27729E89581 (void);
-// 0x000000E6 System.Object SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerator.get_Current()
+// 0x000000EC System.Object SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerator.get_Current()
 extern void U3CBiteBehaviourU3Ed__70_System_Collections_IEnumerator_get_Current_mD6D1FCC8E017F8FFFF8D35B866A6C986A2FAEB5B (void);
-// 0x000000E7 System.Collections.Generic.IEnumerator`1<System.Object> SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator()
+// 0x000000ED System.Collections.Generic.IEnumerator`1<System.Object> SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator()
 extern void U3CBiteBehaviourU3Ed__70_System_Collections_Generic_IEnumerableU3CSystem_ObjectU3E_GetEnumerator_m2A51428EEE77D091DD883A6C98288DDA6DAE21E2 (void);
-// 0x000000E8 System.Collections.IEnumerator SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerable.GetEnumerator()
+// 0x000000EE System.Collections.IEnumerator SheepPlaneBehaviour/<BiteBehaviour>d__70::System.Collections.IEnumerable.GetEnumerator()
 extern void U3CBiteBehaviourU3Ed__70_System_Collections_IEnumerable_GetEnumerator_m4B131ED4AC44C369421B3A6627687A7366F96189 (void);
-// 0x000000E9 System.Void LineRendererManager::Start()
+// 0x000000EF System.Void LineRendererManager::Start()
 extern void LineRendererManager_Start_m9A10ECD469CF2FAD5279A5B334B92F1309AE3074 (void);
-// 0x000000EA System.Void LineRendererManager::UpdateLine(System.Single,UnityEngine.Transform,UnityEngine.Transform)
+// 0x000000F0 System.Void LineRendererManager::UpdateLine(System.Single,UnityEngine.Transform,UnityEngine.Transform)
 extern void LineRendererManager_UpdateLine_mECA17987745FAB524E5DA39E10E009D0F2AA8149 (void);
-// 0x000000EB System.Void LineRendererManager::InitializeLineRenderer()
+// 0x000000F1 System.Void LineRendererManager::InitializeLineRenderer()
 extern void LineRendererManager_InitializeLineRenderer_mA3DC78E759834DF51F8C1CD0623791ADBE2D2EE8 (void);
-// 0x000000EC System.Void LineRendererManager::.ctor()
+// 0x000000F2 System.Void LineRendererManager::.ctor()
 extern void LineRendererManager__ctor_mD3B809A096ADFC36493DD3EAE176D966EDFCD142 (void);
-// 0x000000ED UnityEngine.Vector3 ISelectableItem::GetPosition()
-// 0x000000EE ISelectableItem SelectableManager::get_Current()
+// 0x000000F3 UnityEngine.Vector3 ISelectableItem::GetPosition()
+// 0x000000F4 ISelectableItem SelectableManager::get_Current()
 extern void SelectableManager_get_Current_m993EDEDC33242EBA85F62532527FF220D339C7E2 (void);
-// 0x000000EF System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
+// 0x000000F5 System.Void SelectableManager::add_OnSelectedItem(System.Action`1<ISelectableItem>)
 extern void SelectableManager_add_OnSelectedItem_mAAA792609BFCA132B7613E30F0E4E43BC4406E79 (void);
-// 0x000000F0 System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
+// 0x000000F6 System.Void SelectableManager::remove_OnSelectedItem(System.Action`1<ISelectableItem>)
 extern void SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A (void);
-// 0x000000F1 System.Void SelectableManager::SetSelectable(ISelectableItem)
+// 0x000000F7 System.Void SelectableManager::SetSelectable(ISelectableItem)
 extern void SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802 (void);
-// 0x000000F2 System.Void SelectableManager::.ctor()
+// 0x000000F8 System.Void SelectableManager::.ctor()
 extern void SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D (void);
-// 0x000000F3 System.Void FilledImageScript::Start()
+// 0x000000F9 System.Void BushScriptSound::Start()
+extern void BushScriptSound_Start_m9CE5087E1D62227A4D20E108DADB7E7F3EF119F8 (void);
+// 0x000000FA System.Void BushScriptSound::PlayGrowSound()
+extern void BushScriptSound_PlayGrowSound_m67CF07FA203F63988424B9EA18F4B6EDDD0BA0AD (void);
+// 0x000000FB System.Void BushScriptSound::.ctor()
+extern void BushScriptSound__ctor_mCC2F7F5C3D677E6C6246062F6F601FFE386821A5 (void);
+// 0x000000FC System.Void SheepSoundManager::Start()
+extern void SheepSoundManager_Start_m6BAD47EEB3F253CA34DFD8452C93808C0849281E (void);
+// 0x000000FD System.Void SheepSoundManager::FixedUpdate()
+extern void SheepSoundManager_FixedUpdate_m43DB2DB742F02DCA63CB9404EA94D29A1EB01CEE (void);
+// 0x000000FE System.Void SheepSoundManager::PlayRandomSheepSound()
+extern void SheepSoundManager_PlayRandomSheepSound_m3AE0B8DFD89E06208791A8342F2443F6113B4588 (void);
+// 0x000000FF System.Void SheepSoundManager::PlaySheepEat(SheepImageBehaviour)
+extern void SheepSoundManager_PlaySheepEat_mF8D7EA2790DE8BE584A48154949CE264A602D04A (void);
+// 0x00000100 System.Void SheepSoundManager::StopSheepEat(SheepImageBehaviour)
+extern void SheepSoundManager_StopSheepEat_mAF99152DAB343EC5B6430C83EE208F44A4C3D665 (void);
+// 0x00000101 System.Void SheepSoundManager::.ctor()
+extern void SheepSoundManager__ctor_mB95AB0808BB6E678F72EC5D4CFF959B9C9600D8A (void);
+// 0x00000102 System.Void FilledImageScript::Start()
 extern void FilledImageScript_Start_mC85A18B2667D8F42C3C0518486E82F93D3F0D5F2 (void);
-// 0x000000F4 System.Void FilledImageScript::EndGrowing()
+// 0x00000103 System.Void FilledImageScript::EndGrowing()
 extern void FilledImageScript_EndGrowing_m1CD311AAC97E450DA903CF7C73F07BE280C06F7D (void);
-// 0x000000F5 System.Void FilledImageScript::StartGrowing()
+// 0x00000104 System.Void FilledImageScript::StartGrowing()
 extern void FilledImageScript_StartGrowing_mDCDA09E10EAD1D8BEFF8A3167E406B0A992CC480 (void);
-// 0x000000F6 System.Void FilledImageScript::UpdateFilled(System.Single)
+// 0x00000105 System.Void FilledImageScript::UpdateFilled(System.Single)
 extern void FilledImageScript_UpdateFilled_mBD058DF5F97BD4968294C247A7C62903C6603E38 (void);
-// 0x000000F7 System.Void FilledImageScript::.ctor()
+// 0x00000106 System.Void FilledImageScript::.ctor()
 extern void FilledImageScript__ctor_mDEF62F0BB0806385C5C173B8E9EF11BD92EC3C24 (void);
-// 0x000000F8 System.Void ExitButtonScript::Start()
+// 0x00000107 System.Void ExitButtonScript::Start()
 extern void ExitButtonScript_Start_mD83A5A04888D30B31673ED372BE93FCF562FE565 (void);
-// 0x000000F9 System.Void ExitButtonScript::ExitGame()
+// 0x00000108 System.Void ExitButtonScript::ExitGame()
 extern void ExitButtonScript_ExitGame_mF0F05B87777724FC4DB47A67C4E50EDDDD352F66 (void);
-// 0x000000FA System.Void ExitButtonScript::.ctor()
+// 0x00000109 System.Void ExitButtonScript::.ctor()
 extern void ExitButtonScript__ctor_m0C70062952FC8C52AB9715909EA2EF9B54456472 (void);
-// 0x000000FB System.Void ExitButtonScript::<Start>b__1_0()
-extern void ExitButtonScript_U3CStartU3Eb__1_0_mCE188E3238B5697FC56949D1A9336D6F79CB8391 (void);
-// 0x000000FC System.Void OpenScene::Start()
+// 0x0000010A System.Void ExitButtonScript::<Start>b__2_0()
+extern void ExitButtonScript_U3CStartU3Eb__2_0_m167A7FFEE5389E72FBF0E972D12D76A1D7CACA55 (void);
+// 0x0000010B System.Void OpenScene::Start()
 extern void OpenScene_Start_mF143B95937024F6DDE3BC6821D773A056E1E9821 (void);
-// 0x000000FD System.Void OpenScene::OnButtonClick()
+// 0x0000010C System.Void OpenScene::OnButtonClick()
 extern void OpenScene_OnButtonClick_m30BF580E83DD38822F8B2AF3620F7CD71764BE31 (void);
-// 0x000000FE System.Void OpenScene::.ctor()
+// 0x0000010D System.Void OpenScene::.ctor()
 extern void OpenScene__ctor_m2AC575BDAA09D5BE6DED2B619860AA0C44A96513 (void);
-// 0x000000FF System.Void OpenScene::<Start>b__2_0()
-extern void OpenScene_U3CStartU3Eb__2_0_m6CF4DAA42A4EACF65FC322313D2BB4BF8E0D844E (void);
-// 0x00000100 T SingletonTemplate`1::get_Instance()
-// 0x00000101 System.Void SingletonTemplate`1::Awake()
-// 0x00000102 System.Void SingletonTemplate`1::.ctor()
-// 0x00000103 System.Void Test::.ctor()
+// 0x0000010E System.Void OpenScene::<Start>b__3_0()
+extern void OpenScene_U3CStartU3Eb__3_0_mB6B8755005B2970F884DCE75FBBA8A0CC9E54151 (void);
+// 0x0000010F T SingletonTemplate`1::get_Instance()
+// 0x00000110 System.Void SingletonTemplate`1::Awake()
+// 0x00000111 System.Void SingletonTemplate`1::.ctor()
+// 0x00000112 System.Void Test::.ctor()
 extern void Test__ctor_mB84DF4A3888723C395E76E3879FDFB8AA1EFEDCB (void);
-// 0x00000104 UnityEngine.AndroidJavaClass AndroidContentOpenerWrapper::get_AJC()
+// 0x00000113 UnityEngine.AndroidJavaClass AndroidContentOpenerWrapper::get_AJC()
 extern void AndroidContentOpenerWrapper_get_AJC_m56A6FF986CD6D45236A50ED651D25C8950676E69 (void);
-// 0x00000105 UnityEngine.AndroidJavaObject AndroidContentOpenerWrapper::get_Context()
+// 0x00000114 UnityEngine.AndroidJavaObject AndroidContentOpenerWrapper::get_Context()
 extern void AndroidContentOpenerWrapper_get_Context_m6CE7274F59239CCCDBEAF63ECFB17D19E6160C8A (void);
-// 0x00000106 System.Void AndroidContentOpenerWrapper::OpenContent(System.String)
+// 0x00000115 System.Void AndroidContentOpenerWrapper::OpenContent(System.String)
 extern void AndroidContentOpenerWrapper_OpenContent_mF8E7547FBFA1AE6C7F1213A06127A952AA02DD1C (void);
-// 0x00000107 System.Void AndroidContentOpenerWrapper::.ctor()
+// 0x00000116 System.Void AndroidContentOpenerWrapper::.ctor()
 extern void AndroidContentOpenerWrapper__ctor_m80633AB226CE1AC10A793A830336F70BBDEDF84A (void);
-// 0x00000108 System.Void OpenFileExample::Update()
+// 0x00000117 System.Void OpenFileExample::Update()
 extern void OpenFileExample_Update_mD70D1A16DE7FECCB8797E42D7EFA7B28ABADD35B (void);
-// 0x00000109 System.Collections.IEnumerator OpenFileExample::BeginDownloadingContent()
+// 0x00000118 System.Collections.IEnumerator OpenFileExample::BeginDownloadingContent()
 extern void OpenFileExample_BeginDownloadingContent_m32840F5774740914C8E175C8A69D323200CF576F (void);
-// 0x0000010A System.Void OpenFileExample::LoadContent(System.String)
+// 0x00000119 System.Void OpenFileExample::LoadContent(System.String)
 extern void OpenFileExample_LoadContent_m512BDDB35A48F1E910C5F8CC0F28F9C43BB2E330 (void);
-// 0x0000010B System.Void OpenFileExample::.ctor()
+// 0x0000011A System.Void OpenFileExample::.ctor()
 extern void OpenFileExample__ctor_m0B4DEC94A13F3C0D660BCFB4C8C2785F4F3A0063 (void);
-// 0x0000010C System.Void OpenFileExample/<BeginDownloadingContent>d__3::.ctor(System.Int32)
+// 0x0000011B System.Void OpenFileExample/<BeginDownloadingContent>d__3::.ctor(System.Int32)
 extern void U3CBeginDownloadingContentU3Ed__3__ctor_m9BB7328DE05DB01582EFDD8F547FF7DE0360652D (void);
-// 0x0000010D System.Void OpenFileExample/<BeginDownloadingContent>d__3::System.IDisposable.Dispose()
+// 0x0000011C System.Void OpenFileExample/<BeginDownloadingContent>d__3::System.IDisposable.Dispose()
 extern void U3CBeginDownloadingContentU3Ed__3_System_IDisposable_Dispose_m8552BE326481C77814806315F2E83FE765D0ED2A (void);
-// 0x0000010E System.Boolean OpenFileExample/<BeginDownloadingContent>d__3::MoveNext()
+// 0x0000011D System.Boolean OpenFileExample/<BeginDownloadingContent>d__3::MoveNext()
 extern void U3CBeginDownloadingContentU3Ed__3_MoveNext_m2D0E14D4E00F9AC357ABFDC09CA4ABEE9B6B35A9 (void);
-// 0x0000010F System.Void OpenFileExample/<BeginDownloadingContent>d__3::<>m__Finally1()
+// 0x0000011E System.Void OpenFileExample/<BeginDownloadingContent>d__3::<>m__Finally1()
 extern void U3CBeginDownloadingContentU3Ed__3_U3CU3Em__Finally1_m62B705C579B954151E43DA577E73699236B7BF97 (void);
-// 0x00000110 System.Object OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000011F System.Object OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CBeginDownloadingContentU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m99B08A05E3DDB75BDFE3046214E472E3275ACEA5 (void);
-// 0x00000111 System.Void OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.IEnumerator.Reset()
+// 0x00000120 System.Void OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CBeginDownloadingContentU3Ed__3_System_Collections_IEnumerator_Reset_m1D7B4910F4E95F703568ABA9222CFE507010E334 (void);
-// 0x00000112 System.Object OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.IEnumerator.get_Current()
+// 0x00000121 System.Object OpenFileExample/<BeginDownloadingContent>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CBeginDownloadingContentU3Ed__3_System_Collections_IEnumerator_get_Current_mEAFEDB3779EA3E312208DFB1FDAE9A36775869A1 (void);
-// 0x00000113 System.Void UnityAndroidOpenUrl.AndroidOpenUrl::OpenFile(System.String,System.String)
+// 0x00000122 System.Void UnityAndroidOpenUrl.AndroidOpenUrl::OpenFile(System.String,System.String)
 extern void AndroidOpenUrl_OpenFile_m540CE87AF2E10FF13FA2115D3593504294B227BD (void);
-static Il2CppMethodPointer s_methodPointers[275] = 
+static Il2CppMethodPointer s_methodPointers[290] = 
 {
 	TestUISignal_Awake_m6511F3813735AF6C89727B627ECC384438F92FF9,
 	TestUISignal_Start_m91F8D1CBEA13223D33DF5FCF85336332E85BBB1A,
@@ -674,6 +704,12 @@ static Il2CppMethodPointer s_methodPointers[275] =
 	ARSessionSpawner_Start_m41F5AD47699562AB18FA735DC76F8845B3524E3A,
 	ARSessionSpawner_SpawnArSession_m539699CD04F9E1DD40BE49F6B1F9577A77763E90,
 	ARSessionSpawner__ctor_m3E7B5995F573F7215CA4727F5BE3C4D0FB3D3224,
+	BushImageBehaviour_add_OnGrowingBush_m8D83366210295626D0BDB40C3343349B0AC0332C,
+	BushImageBehaviour_remove_OnGrowingBush_mE7634EBCCBFDDD765E59BD5092410301DF8D8CC0,
+	BushImageBehaviour_add_OnStartGrowingBush_mA803D80CA669A9F4D37AE88219F8C62888A109F8,
+	BushImageBehaviour_remove_OnStartGrowingBush_mD0BFB5DAD0352E26D0EDEEBD725C0D1012DFD906,
+	BushImageBehaviour_add_OnEndGrowingBush_m5CB20CE1391B0435DDE3B913D6A7B84E369B46E8,
+	BushImageBehaviour_remove_OnEndGrowingBush_m850297D7B886E14AE263058AD97FF37F3389BB06,
 	BushImageBehaviour_get_IsGrowing_mA5BB44CEFB96E7A5B9579346545F1D22BCD268D3,
 	BushImageBehaviour_get_IsTargettedBySheep_mD8DD7833DF1F0C74687B15F83F014082907766BC,
 	BushImageBehaviour_get_Mesh_m34DA07500F8C01E50A3B0F8959B808E95C906D7D,
@@ -800,6 +836,15 @@ static Il2CppMethodPointer s_methodPointers[275] =
 	SelectableManager_remove_OnSelectedItem_mC0CD7DF6097046C2CA253FF9B07273D6E3103F8A,
 	SelectableManager_SetSelectable_m5D6E22DAFD193CBDF097D4ADDFB6B7705875B802,
 	SelectableManager__ctor_m89284F98DE2E8E9DF27D081519897132D152225D,
+	BushScriptSound_Start_m9CE5087E1D62227A4D20E108DADB7E7F3EF119F8,
+	BushScriptSound_PlayGrowSound_m67CF07FA203F63988424B9EA18F4B6EDDD0BA0AD,
+	BushScriptSound__ctor_mCC2F7F5C3D677E6C6246062F6F601FFE386821A5,
+	SheepSoundManager_Start_m6BAD47EEB3F253CA34DFD8452C93808C0849281E,
+	SheepSoundManager_FixedUpdate_m43DB2DB742F02DCA63CB9404EA94D29A1EB01CEE,
+	SheepSoundManager_PlayRandomSheepSound_m3AE0B8DFD89E06208791A8342F2443F6113B4588,
+	SheepSoundManager_PlaySheepEat_mF8D7EA2790DE8BE584A48154949CE264A602D04A,
+	SheepSoundManager_StopSheepEat_mAF99152DAB343EC5B6430C83EE208F44A4C3D665,
+	SheepSoundManager__ctor_mB95AB0808BB6E678F72EC5D4CFF959B9C9600D8A,
 	FilledImageScript_Start_mC85A18B2667D8F42C3C0518486E82F93D3F0D5F2,
 	FilledImageScript_EndGrowing_m1CD311AAC97E450DA903CF7C73F07BE280C06F7D,
 	FilledImageScript_StartGrowing_mDCDA09E10EAD1D8BEFF8A3167E406B0A992CC480,
@@ -808,11 +853,11 @@ static Il2CppMethodPointer s_methodPointers[275] =
 	ExitButtonScript_Start_mD83A5A04888D30B31673ED372BE93FCF562FE565,
 	ExitButtonScript_ExitGame_mF0F05B87777724FC4DB47A67C4E50EDDDD352F66,
 	ExitButtonScript__ctor_m0C70062952FC8C52AB9715909EA2EF9B54456472,
-	ExitButtonScript_U3CStartU3Eb__1_0_mCE188E3238B5697FC56949D1A9336D6F79CB8391,
+	ExitButtonScript_U3CStartU3Eb__2_0_m167A7FFEE5389E72FBF0E972D12D76A1D7CACA55,
 	OpenScene_Start_mF143B95937024F6DDE3BC6821D773A056E1E9821,
 	OpenScene_OnButtonClick_m30BF580E83DD38822F8B2AF3620F7CD71764BE31,
 	OpenScene__ctor_m2AC575BDAA09D5BE6DED2B619860AA0C44A96513,
-	OpenScene_U3CStartU3Eb__2_0_m6CF4DAA42A4EACF65FC322313D2BB4BF8E0D844E,
+	OpenScene_U3CStartU3Eb__3_0_mB6B8755005B2970F884DCE75FBBA8A0CC9E54151,
 	NULL,
 	NULL,
 	NULL,
@@ -834,7 +879,7 @@ static Il2CppMethodPointer s_methodPointers[275] =
 	U3CBeginDownloadingContentU3Ed__3_System_Collections_IEnumerator_get_Current_mEAFEDB3779EA3E312208DFB1FDAE9A36775869A1,
 	AndroidOpenUrl_OpenFile_m540CE87AF2E10FF13FA2115D3593504294B227BD,
 };
-static const int32_t s_InvokerIndices[275] = 
+static const int32_t s_InvokerIndices[290] = 
 {
 	5679,
 	5568,
@@ -867,7 +912,7 @@ static const int32_t s_InvokerIndices[275] =
 	5679,
 	5679,
 	5679,
-	8958,
+	8959,
 	5613,
 	4547,
 	5679,
@@ -876,7 +921,7 @@ static const int32_t s_InvokerIndices[275] =
 	4392,
 	4511,
 	5679,
-	8958,
+	8959,
 	5539,
 	4484,
 	5476,
@@ -895,9 +940,9 @@ static const int32_t s_InvokerIndices[275] =
 	2394,
 	5679,
 	5679,
-	8958,
+	8959,
 	5679,
-	8958,
+	8959,
 	5679,
 	1271,
 	4097,
@@ -952,6 +997,12 @@ static const int32_t s_InvokerIndices[275] =
 	5679,
 	5679,
 	5679,
+	4511,
+	4511,
+	4511,
+	4511,
+	4511,
+	4511,
 	5474,
 	5474,
 	5568,
@@ -1081,6 +1132,15 @@ static const int32_t s_InvokerIndices[275] =
 	5679,
 	5679,
 	5679,
+	5679,
+	5679,
+	5679,
+	4511,
+	4511,
+	5679,
+	5679,
+	5679,
+	5679,
 	4547,
 	5679,
 	5679,
@@ -1095,9 +1155,9 @@ static const int32_t s_InvokerIndices[275] =
 	0,
 	0,
 	5679,
-	8917,
-	8917,
-	8763,
+	8918,
+	8918,
+	8764,
 	5679,
 	5679,
 	5568,
@@ -1114,7 +1174,7 @@ static const int32_t s_InvokerIndices[275] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
-	{ 0x02000024, { 0, 2 } },
+	{ 0x02000026, { 0, 2 } },
 };
 extern const uint32_t g_rgctx_SingletonTemplate_1_t4351963C64ACD6019BD79B86CD9A26C9736DB5D2;
 extern const uint32_t g_rgctx_T_tDFFF573EDEB3F8B9BB7E1ABDD41009D805416107;
@@ -1128,7 +1188,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	275,
+	290,
 	s_methodPointers,
 	0,
 	NULL,

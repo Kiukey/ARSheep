@@ -115,6 +115,9 @@ public class SheepImageBehaviour : MonoBehaviour
     }
     public void ResetTarget()
     {
+        if (!target)
+            return;
+
         target.SetIsTargetBySheep(false);
         target = null;
     }
