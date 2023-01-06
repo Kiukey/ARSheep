@@ -13,7 +13,12 @@ public class UIBoard : SingletonTemplate<UIBoard>
 
     protected override void Awake()
     {
-        base.Awake();
+        if (instance)
+        {
+            Destroy(transform.gameObject);
+            return;
+        }
+        instance = this as UIBoard;
         DontDestroyOnLoad(this);
     }
 
