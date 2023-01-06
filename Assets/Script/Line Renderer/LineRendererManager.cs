@@ -9,52 +9,51 @@ public class LineRendererManager : MonoBehaviour
     [SerializeField] int definition = 10;
     [SerializeField] float height = 0.5f;
     [SerializeField] Vector3[] points = null;
-    [SerializeField] Transform debugOne, debugTwo;
+
     private void Start()
     {
-        ImageTracking.Instance.OnCheckDistance += UpdateLine;
-
-        //debug
-        //UpdateLine(1, debugOne, debugTwo);
-        
         InitializeLineRenderer();
     }
-    void UpdateLine(float _distance,Transform _from, Transform _to)
+
+    void UpdateLine(Transform _from, Transform _to)
     {
         if (!lineRenderer|| !_from.gameObject.activeInHierarchy || !_to.gameObject.activeInHierarchy)
             return;
-
+        float _distance = Vector3.Distance(_from.position, _to.position);
         CalculatePoints(_from.position, _to.position);
         lineRenderer.SetPositions(points);
         
-        Color _newColor = Color.white;
-        if(lerpColor)
-            _newColor = Color.Lerp(Color.red, Color.green, 0.5f / _distance);
-        else
-            _newColor = _distance > 0.5f ? Color.red : Color.green;
-        lineRenderer.startColor = _newColor;
-        lineRenderer.endColor = _newColor;
+        UpdateLineColor(_distance);
     }
     void InitializeLineRenderer()
     {
         if (!lineRenderer)
             return;
-
+        ImageTracking.Instance.OnEndImageUpdate += UpdateLine;
         lineRenderer.SetPositions(new Vector3[] {Vector3.zero, Vector3.zero });
+        lineRenderer.positionCount = definition+1;
     }
-
-    void CalculatePoints(Vector3 startingPos, Vector3 endingPos)
+    void CalculatePoints(Vector3 _startingPos, Vector3 _endingPos)
     {
-        Vector3 middlePoint = Vector3.Lerp(startingPos, endingPos, .5f);
-        middlePoint.y = height;
-        points = new Vector3[definition];
-
-        for (int i = 0; i < definition; i++)
+        Vector3 _middlePoint = Vector3.Lerp(_startingPos, _endingPos, .5f);
+        _middlePoint.y = height;
+        points = new Vector3[definition+1];
+        for (int i = 0; i < definition+1; i++)
         {
             float t = i / (float)definition;
-            Vector3 posA = Vector3.Lerp(startingPos, middlePoint, t);
-            Vector3 posB = Vector3.Lerp(middlePoint, endingPos, t);
-            points[i] = Vector3.Lerp(posA, posB, t);
+            Vector3 _posA = Vector3.Lerp(_startingPos, _middlePoint, t);
+            Vector3 _posB = Vector3.Lerp(_middlePoint, _endingPos, t);
+            points[i] = Vector3.Lerp(_posA, _posB, t);
         }
+    }
+    void UpdateLineColor(float _distance)
+    {
+        Color _newColor = Color.white;
+        if (lerpColor)
+            _newColor = Color.Lerp(Color.red, Color.green, 0.5f / _distance);
+        else
+            _newColor = _distance > 0.5f ? Color.red : Color.green;
+        lineRenderer.startColor = _newColor;
+        lineRenderer.endColor = _newColor;
     }
 }
