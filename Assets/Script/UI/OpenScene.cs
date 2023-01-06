@@ -8,6 +8,7 @@ public class OpenScene : MonoBehaviour
 {
     [SerializeField] Button button = null;
     [SerializeField] string sceneName = "";
+    [SerializeField] AudioSource click = null;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class OpenScene : MonoBehaviour
 
     void OnButtonClick()
     {
+        click.Play();
         UIBoard.Instance.LoadScene(sceneName);
     }
 }
