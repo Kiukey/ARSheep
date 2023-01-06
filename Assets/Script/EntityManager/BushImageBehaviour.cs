@@ -52,7 +52,7 @@ public class BushImageBehaviour : MonoBehaviour
 			OnEndGrowingBush?.Invoke();
         }
 		mesh.transform.localScale = Vector3.MoveTowards(mesh.transform.localScale, scaleSize, Time.deltaTime * growingSpeed);
-		OnGrowingBush?.Invoke(GrowingProgress(transform.localScale));
+		OnGrowingBush?.Invoke(GrowingProgress(mesh.transform.localScale));
     }
 
 	float GrowingProgress(Vector3 _currentScale)

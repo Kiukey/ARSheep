@@ -33,6 +33,7 @@ public class FilledImageScript : MonoBehaviour
 
     public void UpdateFilled(float _percent)
     {
+        Debug.Log(_percent);
         Vector3 _fwd = (cam.transform.position - filledImage.transform.position).normalized;
         Quaternion _rot = Quaternion.LookRotation(_fwd);
         transform.rotation = _rot;
