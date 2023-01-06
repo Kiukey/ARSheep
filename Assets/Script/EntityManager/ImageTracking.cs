@@ -8,16 +8,21 @@ using UnityEngine.XR.ARSubsystems;
 public class ImageTracking : SingletonTemplate<ImageTracking>
 {
     public event Action<float, Transform, Transform> OnCheckDistance = null;
+    public event Action<Transform, Transform> OnEndImageUpdate = null;
 
     [SerializeField] ARTrackedImageManager imageManager = null;
     [SerializeField] XRReferenceImageLibrary imageLibrary = null;
     [SerializeField] LineRenderer lineRenderer = null;
+    
     //prefabs
     [SerializeField] List<GameObject> objects = new List<GameObject>();
     //sheep
     [SerializeField] SheepImageBehaviour sheep = null;
     //bush
     [SerializeField] BushImageBehaviour bush = null;
+
+    public SheepImageBehaviour Sheep => sheep;
+    public BushImageBehaviour Bush => bush;
 
     private void Start()
     {
@@ -85,6 +90,8 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
             if (bush)
                 CheckDistance(image);
         }
+
+        OnEndImageUpdate?.Invoke(sheep.transform, bush.transform);
     }
     void CheckDistance(ARTrackedImage _image)
     {
@@ -113,7 +120,6 @@ public class ImageTracking : SingletonTemplate<ImageTracking>
     IEnumerator SpawnEntities()
     {
         yield return new WaitForSeconds(1);
-
         bush = Instantiate(objects[0]).GetComponent<BushImageBehaviour>();
         sheep = Instantiate(objects[1]).GetComponent<SheepImageBehaviour>();
     }
