@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 
 
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Outline))]
 public class Bush : MonoBehaviour,ISelectableItem
 {
     public event Action OnEaten = null;
@@ -16,7 +18,7 @@ public class Bush : MonoBehaviour,ISelectableItem
 
     SheepPlaneBehaviour sheepObject = null;
     [SerializeField] int bitesLeft = 0;
-    [SerializeField] MonoBehaviour outline;
+    [SerializeField] Outline outline;
 
     bool isGrowing = false;
     Vector3 originalSize = Vector3.zero;
@@ -27,13 +29,22 @@ public class Bush : MonoBehaviour,ISelectableItem
 
     public int BitesLeft => bitesLeft;
     void Start()
-    {        
+    {
+        Init();
+    }
+    void Init()
+    {
         bitesLeft = bitesToEat;
         originalSize = transform.localScale - shrinkSize;
         CustomClicker.Instance.OnClickObject += InteractionBehaviour;
+        OnSelected += (b) =>
+        {
+            Debug.Log("in bush selected");
+            outline.enabled = true;
+        };
         waitAfterEat = new WaitForSeconds(timeAfterEat);
-        sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();
-        SetOutline(false);
+        sheepObject = CustomClicker.Instance.GetSheepObject().GetComponent<SheepPlaneBehaviour>();        
+        outline.enabled = false;
         sheepObject.OnStartEating += (b) =>
         {
             if (b != this)
@@ -41,7 +52,6 @@ public class Bush : MonoBehaviour,ISelectableItem
             InitSheepEvents();
         };
     }
-
     void InitSheepEvents()
     {
         sheepObject.OnBite += EatBehaviour;
@@ -51,10 +61,6 @@ public class Bush : MonoBehaviour,ISelectableItem
     void Update()
     {
         UpdateShrink();
-    }
-    void SetOutline(bool _enable)
-    {
-        outline.enabled = _enable;
     }
     void HandleUpdateGrowing()
     {
@@ -119,7 +125,7 @@ public class Bush : MonoBehaviour,ISelectableItem
         if (bitesLeft <= 0 && isGrowing == false)
         {
             StartGrow();
-            SetOutline(false);
+            outline.enabled = false;
             OnEaten?.Invoke();
         }        
     }
@@ -128,8 +134,7 @@ public class Bush : MonoBehaviour,ISelectableItem
     {
         if (_objec != gameObject || isGrowing || !sheepObject.CanSelectBush)
             return;
-        SelectableManager.Instance.SetSelectable(this);
-        SetOutline(true);
+        SelectableManager.Instance.SetSelectable(this);        
         OnSelected?.Invoke(this);
     }
     public Vector3 GetPosition()
